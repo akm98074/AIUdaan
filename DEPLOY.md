@@ -144,7 +144,7 @@ serves this site instead.
 ## Post-launch checklist
 
 - [ ] Replace `assets/docs/aiudaan-case-study.pdf` with the real anonymized PDF.
-- [ ] Fill in real testimonials + Vitea/Zettabolt quotes in `index.html`.
+- [ ] Fill in real testimonials + advisory-reference quotes in `index.html`.
 - [ ] Set real contact email / LinkedIn (search `hello@aiudaan.ai`).
 - [ ] Confirm HTTPS padlock and the non-www → root redirect both work.
 - [ ] Submit `https://aiudaan.ai/sitemap.xml` in Google Search Console.

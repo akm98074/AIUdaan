@@ -1,6 +1,6 @@
 # AIUdaan — Launch Website
 
-A fast, single-page marketing site for **AIUdaan** (Abhishek Kumar Mishra), built
+A fast, single-page marketing site for **AIUdaan**, built
 straight from the *AIUdaan 90-Day Launch Playbook* copy and the *AI Udaan Brand
 Guidelines v1.0*.
 
@@ -75,8 +75,8 @@ Search the project for `[` brackets and `TODO`:
 | Where | Replace with |
 |-------|--------------|
 | `index.html` → Testimonials (`.tcard`) | 6–8 real outcome quotes (was stuck → worked together → result). |
-| `index.html` → Advisory references (`.refcard`) | Real CEO/CTO quotes from Vitea & Zettabolt. |
-| `assets/docs/aiudaan-case-study.pdf` | The real anonymized Meta support case study PDF. |
+| `index.html` → Advisory references (`.refcard`) | Real CEO/CTO quotes (replace `[Healthcare AI company]` / `[AI Infrastructure company]`). |
+| `assets/docs/aiudaan-case-study.pdf` | The real anonymized support case study PDF. |
 | `mailto:hello@aiudaan.ai` & LinkedIn URL | Your real contact email / company LinkedIn. |
 | Calendly/booking | Optionally swap the `mailto:` "Book a call" links for your scheduler URL. |
 

@@ -1,3 +1,6 @@
-# Block all crawlers — site is not to be indexed for now.
+# Crawling is ALLOWED on purpose: crawlers must fetch the page to see the
+# "noindex" directive (in the <meta name="robots"> tag and the X-Robots-Tag
+# header). Blocking crawl here would hide noindex and could leave the URL
+# indexable. Indexing is blocked at the page level, not here.
 User-agent: *
-Disallow: /
+Allow: /

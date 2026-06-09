@@ -41,9 +41,20 @@ implemented as CSS variables at the top of `assets/css/styles.css`.
 | Scale framing | AI for the Next 500 Million | Press, pitch decks |
 | Current | Empowering the Future, Breaking Barriers | General purpose |
 
-The site uses **"Empowering the Future · Breaking Barriers"** in the footer and the
-playbook's positioning line — *"AI doesn't fail on the model. It fails on the last
-mile."* — as the hero headline.
+**Tagline choice for this site.** The brand-guide taglines above ("AI for the Next
+500 Million", "Sabka AI, Sabki Udaan", "Empowering the Future, Breaking Barriers")
+read as *mass-market / accessible-tech* — which clashes with what this site actually
+sells today: premium executive coaching and enterprise AI advisory. To keep the
+funnel consistent, the site leads with **positioning** lines, not the mass-market
+ones:
+
+- Hero headline: *"AI doesn't fail on the model. It fails on the last mile."*
+- Footer tagline: *"Across the last mile of AI"*
+- Footer sign-off: *"From strategy to durable systems."*
+
+Keep the broad-access taglines in reserve for a future productized/cohort offer
+(where "Next 500 Million" would genuinely fit), or for vernacular social channels —
+but not in the high-ticket conversion funnel.
 
 ## Social handles / sizes (from the guide)
 

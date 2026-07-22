@@ -44,17 +44,18 @@ implemented as CSS variables at the top of `assets/css/styles.css`.
 **Tagline choice for this site.** The brand-guide taglines above ("AI for the Next
 500 Million", "Sabka AI, Sabki Udaan", "Empowering the Future, Breaking Barriers")
 read as *mass-market / accessible-tech* — which clashes with what this site actually
-sells today: premium, hands-on career transformation for senior engineers and
-leaders. For launch the site is scoped to that single offering, branded **Escape
-Velocity**, and leads with **positioning** lines, not the mass-market ones:
+sells today: premium, hands-on career acceleration for senior engineers and
+leaders. For launch the site is scoped to that single offering, branded **Ascent:
+AI-Native Career Acceleration**, and leads with **positioning** lines, not the
+mass-market ones:
 
-- Offering name: *Escape Velocity* (career transformation — the "gym-coach" model,
+- Offering name: *Ascent — AI-Native Career Acceleration* (the "gym-coach" model,
   deliberately *not* framed as generic "mentoring / coaching").
-- Hero headline: *"It's not a talent gap. It's an escape-velocity gap."*
-- Footer tagline: *"Escape velocity for senior careers"*
-- Physics/flight metaphor ties back to the Udaan (उड़ान = flight) phoenix brand:
-  the thrust to break free of a career stall and reach a higher orbit — Staff →
-  Principal, manager ↔ IC, up to Director / VP / Partner.
+- Hero headline: *"Your next level isn't a skills problem. It's a last-mile problem."*
+- Footer tagline: *"Across the last mile of your career"*
+- The "Ascent" / climb metaphor ties back to the Udaan (उड़ान = flight) phoenix
+  brand: the last mile of the climb — Staff → Principal, manager ↔ IC, up to
+  Director / VP / Partner.
 
 Keep the broad-access taglines in reserve for a future productized/cohort offer
 (where "Next 500 Million" would genuinely fit), or for vernacular social channels —

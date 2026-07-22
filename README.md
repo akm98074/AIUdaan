@@ -5,13 +5,13 @@ straight from the *AIUdaan 90-Day Launch Playbook* copy and the *AI Udaan Brand
 Guidelines v1.0*.
 
 For launch, the site is scoped to a **single offering** — the individual door —
-branded **Escape Velocity**. (The company / AI-transformation door has been held
-back for a later phase.) It does three things and nothing more:
+branded **Ascent: AI-Native Career Acceleration**. (The company / AI-transformation
+door has been held back for a later phase.) It does three things and nothing more:
 
-1. **Positioning** — "It's not a talent gap. It's an escape-velocity gap."
-2. **The program** — *Escape Velocity*: career transformation for senior engineers
+1. **Positioning** — "Your next level isn't a skills problem. It's a last-mile problem."
+2. **The program** — *Ascent*: AI-native career acceleration for senior engineers
    and leaders (Staff+, M1+, manager↔IC, up to Director / VP / Partner).
-3. **Proof** — testimonials, credentials, mentoring track record.
+3. **Proof** — testimonials, credentials, coaching track record.
 
 No framework, no build step, no database. Plain HTML/CSS/JS so it loads instantly
 and can be hosted literally anywhere — including straight onto your existing GoDaddy
@@ -38,19 +38,17 @@ AIUdaan/
     │   └── styles.css          # All styling (brand palette as CSS variables)
     ├── js/
     │   └── main.js             # Mobile-menu toggle + footer year (site works without JS)
-    ├── img/
-    │   ├── logo-primary.png    # Full wordmark for light backgrounds (header)
-    │   ├── logo-dark.png       # Full wordmark for dark backgrounds (footer)
-    │   ├── icon.png            # Phoenix mark, transparent bg (hero / about)
-    │   ├── favicon.ico         # Multi-size .ico
-    │   ├── favicon-32.png      # 32×32 PNG favicon
-    │   ├── favicon-64.png      # 64×64 PNG favicon
-    │   ├── apple-touch-icon.png# 180×180 iOS home-screen icon
-    │   ├── icon-192.png        # PWA icon
-    │   ├── icon-512.png        # PWA icon
-    │   └── og-image.png        # 1200×630 social-share image
-    └── docs/
-        └── aiudaan-case-study.pdf   # PLACEHOLDER — replace with the real anonymized PDF
+    └── img/
+        ├── logo-primary.png    # Full wordmark for light backgrounds (header)
+        ├── logo-dark.png       # Full wordmark for dark backgrounds (footer)
+        ├── icon.png            # Phoenix mark, transparent bg (hero / about)
+        ├── favicon.ico         # Multi-size .ico
+        ├── favicon-32.png      # 32×32 PNG favicon
+        ├── favicon-64.png      # 64×64 PNG favicon
+        ├── apple-touch-icon.png# 180×180 iOS home-screen icon
+        ├── icon-192.png        # PWA icon
+        ├── icon-512.png        # PWA icon
+        └── og-image.png        # 1200×630 social-share image
 ```
 
 All asset references in the HTML are **root-absolute** (`/assets/...`), so the site

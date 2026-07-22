@@ -68,8 +68,8 @@ zip. Keep it until you're happy the new site is live.
 
 ### A5. Verify
 Visit `https://aiudaan.ai` (try an incognito window to dodge cache). Check the
-hero, both door buttons, the case-study PDF link, and `https://aiudaan.ai/nope`
-(should show our 404). If you don't have SSL yet, in cPanel use **Security → SSL/TLS
+hero, the "Book a diagnostic call" CTA, the section anchors, and
+`https://aiudaan.ai/nope` (should show our 404). If you don't have SSL yet, in cPanel use **Security → SSL/TLS
 Status → Run AutoSSL**, or GoDaddy's SSL product.
 
 *(FTP alternative: connect with FileZilla using your cPanel FTP credentials and drop
@@ -143,8 +143,8 @@ serves this site instead.
 
 ## Post-launch checklist
 
-- [ ] Replace `assets/docs/aiudaan-case-study.pdf` with the real anonymized PDF.
-- [ ] Fill in real testimonials + advisory-reference quotes in `index.html`.
+- [ ] Fill in real name, employers, degrees, and testimonials in `index.html`.
+- [ ] Confirm the mentoring credentials (Google / Meta / Microsoft) are accurate.
 - [ ] Set real contact email / LinkedIn (search `hello@aiudaan.ai`).
 - [ ] Confirm HTTPS padlock and the non-www → root redirect both work.
 - [ ] Submit `https://aiudaan.ai/sitemap.xml` in Google Search Console.

@@ -4,11 +4,14 @@ A fast, single-page marketing site for **AIUdaan**, built
 straight from the *AIUdaan 90-Day Launch Playbook* copy and the *AI Udaan Brand
 Guidelines v1.0*.
 
-It does exactly the three things the playbook asks for and nothing more:
+For launch, the site is scoped to a **single offering** — the individual door —
+branded **Escape Velocity**. (The company / AI-transformation door has been held
+back for a later phase.) It does three things and nothing more:
 
-1. **Positioning** — "AI doesn't fail on the model. It fails on the last mile."
-2. **Two doors** — *For individuals* (career acceleration) and *For companies* (AI transformation).
-3. **Proof** — case study, testimonials, advisory references, credentials.
+1. **Positioning** — "It's not a talent gap. It's an escape-velocity gap."
+2. **The program** — *Escape Velocity*: career transformation for senior engineers
+   and leaders (Staff+, M1+, manager↔IC, up to Director / VP / Partner).
+3. **Proof** — testimonials, credentials, mentoring track record.
 
 No framework, no build step, no database. Plain HTML/CSS/JS so it loads instantly
 and can be hosted literally anywhere — including straight onto your existing GoDaddy
@@ -74,9 +77,9 @@ Search the project for `[` brackets and `TODO`:
 
 | Where | Replace with |
 |-------|--------------|
-| `index.html` → Testimonials (`.tcard`) | 6–8 real outcome quotes (was stuck → worked together → result). |
-| `index.html` → Advisory references (`.refcard`) | Real CEO/CTO quotes (replace `[Healthcare AI company]` / `[AI Infrastructure company]`). |
-| `assets/docs/aiudaan-case-study.pdf` | The real anonymized support case study PDF. |
+| `index.html` → `[Your Name]` / `[Company A/B/C]` / `[University A/B]` | Your real name, employers, and degrees. |
+| `index.html` → Testimonials (`.tcard`) | 4+ real outcome quotes spanning the range (stalled promo, Director→VP, manager↔IC, AI adaptation). |
+| `index.html` → Credentials (`.chip`) | Confirm the mentoring claims (Google / Meta / Microsoft) and role history match what you want public. |
 | `mailto:hello@aiudaan.ai` & LinkedIn URL | Your real contact email / company LinkedIn. |
 | Calendly/booking | Optionally swap the `mailto:` "Book a call" links for your scheduler URL. |
 

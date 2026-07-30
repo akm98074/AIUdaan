@@ -1,6 +1,5 @@
-# Crawling is ALLOWED on purpose: crawlers must fetch the page to see the
-# "noindex" directive (in the <meta name="robots"> tag and the X-Robots-Tag
-# header). Blocking crawl here would hide noindex and could leave the URL
-# indexable. Indexing is blocked at the page level, not here.
+# Indexing is allowed. The page-level meta robots tag is set to "index, follow".
 User-agent: *
 Allow: /
+
+Sitemap: https://aiudaan.ai/sitemap.xml

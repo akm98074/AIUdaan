@@ -111,23 +111,40 @@ p  { margin: 0 0 1rem; }
     radial-gradient(560px 380px at -6% 18%, rgba(26,26,94,.08), transparent 60%);
 }
 .hero .container { position: relative; z-index: 1; }
-.hero-grid { display: grid; grid-template-columns: 1.45fr .55fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.hero-grid { display: grid; grid-template-columns: 1.35fr .65fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
 .hero .accent { color: var(--coral); }
 .hero-sub { font-size: 1.3rem; font-weight: 700; color: var(--navy); max-width: 34ch; margin-bottom: 1.2rem; }
 .hero-copy > p:not(.hero-sub) { color: #3a3a52; max-width: 58ch; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 1.6rem; }
-.hero-byline { font-weight: 700; color: var(--navy); }
-.hero-byline a { color: var(--navy); border-bottom: 2px solid var(--amber); }
-.hero-byline a:hover { color: var(--coral); text-decoration: none; }
-.hero-art { display: flex; justify-content: center; }
-.hero-art .badge {
-  width: 100%; max-width: 260px; aspect-ratio: 1; border-radius: 50%;
+.hero-art { display: flex; justify-content: center; align-items: flex-start; }
+
+/* Portrait: the photo is shot on a white studio backdrop, so it sits on a
+   cream plate and multiplies into it — the backdrop disappears into the page
+   while the subject stays intact. A radial mask feathers the outer edge. */
+.portrait { margin: 0; width: 100%; max-width: 300px; text-align: center; }
+.portrait-photo {
+  display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover;
+  object-position: 50% 12%;                 /* crop to head and shoulders */
+  border-radius: 999px 999px var(--radius-lg) var(--radius-lg);
   background:
-    radial-gradient(circle at 50% 38%, rgba(239,159,39,.22), transparent 58%),
-    conic-gradient(from 200deg, rgba(26,26,94,.06), rgba(239,159,39,.10), rgba(216,90,48,.08), rgba(26,26,94,.06));
-  display: grid; place-items: center; padding: 8%; box-shadow: var(--shadow-md);
+    radial-gradient(circle at 50% 32%, rgba(239,159,39,.16), transparent 64%),
+    linear-gradient(180deg, #fbf6ec 0%, #fffdf9 55%, #fff 100%);
+  mix-blend-mode: multiply;
+  --portrait-fade:
+    radial-gradient(108% 102% at 50% 38%, #000 40%, transparent 94%),
+    linear-gradient(180deg, #000 70%, transparent 99%);
+  -webkit-mask-image: var(--portrait-fade);
+          mask-image: var(--portrait-fade);
+  -webkit-mask-composite: source-in;
+          mask-composite: intersect;
 }
-.hero-art .badge img { width: 86%; }
+.portrait-meta { display: block; margin-top: 1rem; }
+.portrait-name { display: block; font-weight: 700; color: var(--navy); }
+.portrait-name a { color: var(--navy); border-bottom: 2px solid var(--amber); }
+.portrait-name a:hover { color: var(--coral); text-decoration: none; }
+.portrait-role {
+  display: block; margin-top: .3rem; font-size: .92rem; line-height: 1.45; color: var(--muted);
+}
 
 /* ---------- Tabs (classic tabbed layout) ---------- */
 .tabs { background: #fff; padding-top: clamp(28px, 4vw, 48px); }
@@ -232,7 +249,7 @@ p  { margin: 0 0 1rem; }
 @media (max-width: 900px) {
   .hero-grid, .plans { grid-template-columns: 1fr; }
   .hero-art { order: -1; }
-  .hero-art .badge { max-width: 220px; }
+  .portrait { max-width: 240px; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .tab-link { padding: .65rem 1rem; font-size: .95rem; }
   .nav-links {

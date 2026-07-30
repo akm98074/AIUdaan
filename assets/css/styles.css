@@ -118,25 +118,21 @@ p  { margin: 0 0 1rem; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 1.6rem; }
 .hero-art { display: flex; justify-content: center; align-items: flex-start; }
 
-/* Portrait: the photo is shot on a white studio backdrop, so it sits on a
-   cream plate and multiplies into it — the backdrop disappears into the page
-   while the subject stays intact. A radial mask feathers the outer edge. */
-.portrait { margin: 0; width: 100%; max-width: 300px; text-align: center; }
+/* Portrait: the studio backdrop is cut out of the source image, so the subject
+   sits directly on the hero gradient. A brand-tinted glow sits behind him and
+   a linear mask fades the bottom of the frame into the page. */
+.portrait { position: relative; margin: 0; width: 100%; max-width: 300px; text-align: center; }
+.portrait::before {
+  content: ""; position: absolute; inset: -2% -8% 24% -8%; z-index: 0; border-radius: 50%;
+  background: radial-gradient(circle at 50% 42%,
+    rgba(239,159,39,.20) 0%, rgba(239,159,39,.11) 46%, rgba(239,159,39,0) 74%);
+}
 .portrait-photo {
+  position: relative; z-index: 1;
   display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover;
-  object-position: 50% 12%;                 /* crop to head and shoulders */
-  border-radius: 999px 999px var(--radius-lg) var(--radius-lg);
-  background:
-    radial-gradient(circle at 50% 32%, rgba(239,159,39,.16), transparent 64%),
-    linear-gradient(180deg, #fbf6ec 0%, #fffdf9 55%, #fff 100%);
-  mix-blend-mode: multiply;
-  --portrait-fade:
-    radial-gradient(108% 102% at 50% 38%, #000 40%, transparent 94%),
-    linear-gradient(180deg, #000 70%, transparent 99%);
+  --portrait-fade: linear-gradient(180deg, #000 72%, transparent 99%);
   -webkit-mask-image: var(--portrait-fade);
           mask-image: var(--portrait-fade);
-  -webkit-mask-composite: source-in;
-          mask-composite: intersect;
 }
 .portrait-meta { display: block; margin-top: 1rem; }
 .portrait-name { display: block; font-weight: 700; color: var(--navy); }

@@ -31,7 +31,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&family=Noto+Sans+Devanagari:wght@500;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="assets/css/styles.css" />
 
@@ -78,7 +78,6 @@
 
       <nav class="nav-links" id="navLinks" aria-label="Sections">
         <a href="#pitch">How it works</a>
-        <a href="#about">About</a>
         <a href="#testimonials">Testimonials</a>
         <a href="#ways">Three ways in</a>
         <a href="#faq">FAQ</a>
@@ -100,29 +99,53 @@
   <main id="top">
 
     <!-- ===================== HERO =====================
-         Deliberately short: headline, one line of positioning, CTA. Everything
-         that used to sit here now has its own section below. -->
+         Copy on the left, credibility card + stats on the right. The navy card
+         carries the bio, so there is no separate About section. -->
     <section class="hero">
-      <div class="container hero-inner">
-        <span class="eyebrow">AI-Native Career Acceleration</span>
-        <h1>
-          Your next level isn't a skills problem.<br />
-          It's a <span class="accent">last-mile problem.</span>
-        </h1>
-        <p class="hero-sub">
-          For senior engineers and leaders operating where there's no map. Bring
-          the goal — the Staff or Principal promo, the first director or VP seat,
-          the manager-to-IC move — and we run it like a project.
-        </p>
-        <div class="hero-cta">
-          <a class="btn btn--primary btn--lg" href="https://forms.gle/WjtAxyr5e2rtBwCfA" target="_blank" rel="noopener">Request a fit call <span class="arw">→</span></a>
-          <a class="btn btn--ghost btn--lg" href="#pitch">How it works <span class="arw">→</span></a>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow eyebrow--coral">AI-Native Career Acceleration</span>
+          <h1>The promo that keeps slipping — run like a project.</h1>
+          <p class="hero-sub">
+            One-on-one work for senior engineers and leaders. Staff, Principal,
+            Director, VP, or the manager↔IC move.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn--primary btn--lg" href="https://forms.gle/WjtAxyr5e2rtBwCfA" target="_blank" rel="noopener">Request a 20-min fit call <span class="arw">→</span></a>
+            <a class="btn btn--ghost btn--lg" href="#pitch">See how it works</a>
+          </div>
+          <p class="hero-fine">Free. Not a sales call. Six clients at a time, never more.</p>
         </div>
-        <ul class="proof">
-          <li><strong>25 years</strong> inside Microsoft, Google &amp; Meta</li>
-          <li><strong>100+</strong> engineers, managers &amp; directors mentored</li>
-          <li><strong>6 clients</strong> at any time, never more</li>
-        </ul>
+
+        <div class="hero-side">
+          <figure class="bio-card">
+            <p class="bio-lead">
+              25 years inside Microsoft, Google, and Meta. Ten years mentoring
+              100+ engineers and leaders.
+            </p>
+            <p class="bio-body">
+              As a Director I went back to an IC role after 22 years away. That
+              taught me more than any promotion — and leaning on AI early became
+              my edge.
+            </p>
+            <figcaption class="bio-attr">
+              <span class="bio-name">— Abhishek Mishra</span>
+              <a class="linkedin-pill linkedin-pill--onDark" href="https://www.linkedin.com/in/abhishekkmishra/"
+                 target="_blank" rel="noopener" aria-label="Abhishek Mishra on LinkedIn">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+                  <path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05A4.2 4.2 0 0 1 17.6 8.7c3 0 3.4 1.9 3.4 4.6V21h-4v-6.3c0-1.5-.3-2.7-1.9-2.7s-2.1 1.2-2.1 2.6V21h-4z"/>
+                </svg>
+                LinkedIn
+              </a>
+            </figcaption>
+          </figure>
+
+          <ul class="stats">
+            <li><span class="stat-num">100+</span> engineers &amp; leaders coached</li>
+            <li><span class="stat-num">1:1</span> only — no cohorts, no group calls</li>
+            <li><span class="stat-num">1:1 hr</span> of my prep for every hour with you</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -130,102 +153,56 @@
     <section class="section" id="pitch">
       <div class="container">
         <header class="section-head">
-          <span class="eyebrow">The pitch</span>
-          <h2>How it works</h2>
+          <span class="eyebrow eyebrow--coral">How it works</span>
+          <h2>Not advice from the sidelines</h2>
           <p class="lead">
-            This is not advice from the sidelines. We take your goal and run it
-            like a project.
+            We take your goal and run it like a project — scoped, planned, worked
+            week by week, with blunt feedback.
           </p>
         </header>
 
-        <ol class="steps">
-          <li class="step">
-            <span class="step-num">1</span>
-            <h3>We scope the project</h3>
+        <ol class="how-grid">
+          <li class="how-step">
+            <span class="how-num">01</span>
+            <h3>Scope &amp; map</h3>
             <p>
-              Map the stakeholders and build a real plan: who to talk to and in
-              what order, the doc that makes your thinking legible, the strategic
-              frame that turns an opinion into a case.
+              Your goal, your org, your stakeholders — mapped, with a plan for who
+              to talk to and in what order.
             </p>
           </li>
-          <li class="step">
-            <span class="step-num">2</span>
-            <h3>We work it week by week</h3>
+          <li class="how-step">
+            <span class="how-num">02</span>
+            <h3>Build the artifacts</h3>
             <p>
-              You leave each session with specific tasks — the draft to write, the
-              conversation to have, the thing to try. I give you blunt feedback and
-              we adjust as reality pushes back.
+              The doc that makes your thinking legible, the strategy frame, the
+              talking points. Yours to keep.
             </p>
           </li>
-          <li class="step">
-            <span class="step-num">3</span>
-            <h3>I do the other half</h3>
+          <li class="how-step">
+            <span class="how-num">03</span>
+            <h3>Work it weekly</h3>
+            <p>
+              You leave each session with specific tasks. We adjust as reality
+              pushes back.
+            </p>
+          </li>
+          <li class="how-step how-step--accent">
+            <span class="how-num">04</span>
+            <h3>My half of the work</h3>
             <p>
               Between sessions I research your exact situation and send resources
-              chosen for it, not a generic list. For every hour we spend one on
-              one, I spend an equal hour on the work behind it.
+              chosen for it — strategic and technical.
             </p>
           </li>
         </ol>
 
         <p class="note">
-          Everything we build is yours, and we work from your real situation
-          without needing anything you can't share — no confidential docs, nothing
-          against policy.
+          No confidential material needed, nothing against policy. We work from
+          your real situation using only what you can share.
         </p>
 
         <div class="hero-cta">
           <a class="btn btn--primary" href="https://forms.gle/WjtAxyr5e2rtBwCfA" target="_blank" rel="noopener">Request a fit call <span class="arw">→</span></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== ABOUT =====================
-         Portrait sits immediately above the "25 years" line, so the face and the
-         credibility claim land together. -->
-    <section class="section section--tint" id="about">
-      <div class="container">
-        <header class="section-head">
-          <span class="eyebrow">Who you'd be working with</span>
-          <h2 class="name-head">
-            Abhishek Mishra
-            <a class="linkedin-pill" href="https://www.linkedin.com/in/abhishekkmishra/"
-               target="_blank" rel="noopener" aria-label="Abhishek Mishra on LinkedIn">
-              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
-                <path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05A4.2 4.2 0 0 1 17.6 8.7c3 0 3.4 1.9 3.4 4.6V21h-4v-6.3c0-1.5-.3-2.7-1.9-2.7s-2.1 1.2-2.1 2.6V21h-4z"/>
-              </svg>
-              LinkedIn
-            </a>
-          </h2>
-        </header>
-
-        <div class="about-grid">
-          <figure class="portrait">
-            <img class="portrait-photo" src="assets/img/abhishek-mishra.webp"
-                 alt="Abhishek Mishra" width="760" height="950" loading="lazy" decoding="async" />
-            <figcaption class="portrait-meta">
-              <span class="portrait-role">Former Director at Meta and Google. Partner at Microsoft.</span>
-            </figcaption>
-          </figure>
-
-          <div class="about-copy">
-            <p>
-              <strong>25 years inside Microsoft, Google, and Meta.</strong> Long
-              enough to learn how these places really work and how growth actually
-              happens.
-            </p>
-            <p>
-              A few years ago, as a Director, I went back to an IC role after 22
-              years away from one. That took more resilience than any promotion I
-              ever earned, and leaning on AI when it was still early gave me the
-              intuition that became my edge.
-            </p>
-            <p>
-              Navigating that system, adapting to AI, and staying steady when the
-              ground shifts: that is what I teach. I've been doing this for ten
-              years, through the pre-AI era and now the AI one.
-            </p>
-          </div>
         </div>
       </div>
     </section>
@@ -493,8 +470,7 @@
         <div class="footer-col">
           <h4>Explore</h4>
           <a href="#pitch">How it works</a>
-          <a href="#about">About</a>
-          <a href="#testimonials">Testimonials</a>
+            <a href="#testimonials">Testimonials</a>
           <a href="#ways">Three ways in</a>
           <a href="#faq">FAQ</a>
         </div>

@@ -32,6 +32,11 @@
   --shadow-cta:  0 8px 22px rgba(216, 90, 48, .28);
 
   --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  /* Display serif for h1/h2, matching the design comp. Set this to var(--font)
+     to put section headings back on Inter. */
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+
+  --num: #9c9284;   /* warm grey used for the step numerals */
 }
 
 /* ---------- Reset ---------- */
@@ -50,8 +55,9 @@ img { max-width: 100%; height: auto; display: block; }
 a { color: var(--coral); text-decoration: none; }
 a:hover { text-decoration: underline; }
 h1, h2, h3 { color: var(--navy); line-height: 1.15; letter-spacing: -.02em; margin: 0 0 .5em; }
-h1 { font-size: clamp(2.1rem, 5vw, 3.4rem); font-weight: 800; }
-h2 { font-size: clamp(1.6rem, 3.4vw, 2.3rem); font-weight: 800; }
+h1, h2 { font-family: var(--font-display); font-weight: 600; letter-spacing: -.01em; }
+h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); }
+h2 { font-size: clamp(1.9rem, 3.8vw, 2.9rem); }
 h3 { font-size: 1.25rem; font-weight: 700; }
 p  { margin: 0 0 1rem; }
 
@@ -63,6 +69,7 @@ p  { margin: 0 0 1rem; }
   display: inline-block; font-size: .78rem; font-weight: 700; letter-spacing: .14em;
   text-transform: uppercase; color: var(--deep-amber); margin-bottom: .9rem;
 }
+.eyebrow--coral { color: var(--coral); }
 .center { text-align: center; }
 .lead { font-size: 1.15rem; color: var(--muted); }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
@@ -93,11 +100,12 @@ p  { margin: 0 0 1rem; }
 .btn--primary:hover { background: #c44e28; color: #fff; }
 .btn--amber { background: var(--amber); color: #3a2402; box-shadow: 0 8px 22px rgba(239,159,39,.30); }
 .btn--amber:hover { background: var(--deep-amber); color: #fff; }
-.btn--ghost { background: transparent; color: var(--navy); border-color: var(--navy); }
-.btn--ghost:hover { background: var(--navy); color: #fff; }
+/* Comp uses a thin neutral outline here, not a heavy navy one. */
+.btn--ghost { background: transparent; color: var(--navy); border-color: #d9d2c6; border-width: 1px; }
+.btn--ghost:hover { background: #fff; border-color: var(--navy); color: var(--navy); }
 .btn--light { background: #fff; color: var(--navy); border-color: var(--line); }
 .btn--light:hover { border-color: var(--navy); }
-.btn--lg { padding: 1rem 1.8rem; font-size: 1.05rem; }
+.btn--lg { padding: 1rem 1.55rem; font-size: 1.02rem; }
 .btn--sm { padding: .6rem 1.1rem; font-size: .92rem; }
 
 /* ---------- Header / Nav ---------- */
@@ -125,99 +133,74 @@ p  { margin: 0 0 1rem; }
 .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--navy); margin: 5px 0; transition: .2s; }
 
 /* ---------- Hero ---------- */
-.hero { position: relative; overflow: hidden; background: linear-gradient(180deg, var(--cream-soft) 0%, #fff 100%); }
-.hero::before {
-  content: ""; position: absolute; inset: 0; z-index: 0; opacity: .9;
-  background:
-    radial-gradient(620px 360px at 88% -8%, rgba(239,159,39,.18), transparent 60%),
-    radial-gradient(560px 380px at -6% 18%, rgba(26,26,94,.08), transparent 60%);
+.hero { background: var(--cream-soft); border-bottom: 1px solid var(--line); }
+.hero-grid {
+  display: grid; grid-template-columns: 1.15fr 1fr;
+  gap: clamp(2rem, 4vw, 3.6rem); align-items: center;
+  padding-block: clamp(44px, 7vw, 88px);
 }
-.hero .container { position: relative; z-index: 1; }
-
-/* Short by design: headline, one line of positioning, CTA — all above the fold. */
-.hero-inner {
-  padding-block: clamp(44px, 7vw, 84px);
-  max-width: 860px; text-align: center;
-}
-.hero h1 { margin-bottom: 1rem; }
-.hero .accent { color: var(--coral); }
+.hero h1 { margin-bottom: 1.1rem; max-width: 17ch; }
 .hero-sub {
-  font-size: clamp(1.05rem, 2vw, 1.22rem); color: #3a3a52;
-  max-width: 56ch; margin: 0 auto 1.6rem;
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem); color: #3a3a52;
+  max-width: 42ch; margin: 0 0 1.8rem;
 }
-.hero-cta { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 1.6rem; }
-.hero-inner .hero-cta { justify-content: center; margin-top: 0; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: .9rem; }
+.hero-fine { margin: 1.1rem 0 0; font-size: .92rem; color: var(--muted); }
 
-/* Grid rather than wrapping flex, so the dividers never orphan onto a new line. */
-.proof {
-  list-style: none; margin: 2.4rem auto 0; padding: 0;
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
-  font-size: .92rem; line-height: 1.45; color: var(--muted);
-  max-width: 780px; text-align: center;
+/* Credibility card — carries the bio that used to live in its own section. */
+.hero-side { display: grid; gap: 1rem; }
+.bio-card {
+  margin: 0; background: var(--navy); color: #fff;
+  border-radius: var(--radius-lg); padding: clamp(1.5rem, 3vw, 2.1rem);
+  box-shadow: var(--shadow-md);
 }
-.proof li { padding-inline: .9rem; }
-.proof li + li { border-left: 1px solid var(--line); }
-.proof strong { display: block; color: var(--navy); font-weight: 800; font-size: 1.05rem; }
-
-/* ---------- About ---------- */
-.about-grid {
-  display: grid; grid-template-columns: 280px 1fr;
-  gap: clamp(1.6rem, 4vw, 3.2rem); align-items: start;
+.bio-lead {
+  font-family: var(--font-display); font-weight: 500;
+  font-size: clamp(1.2rem, 1.9vw, 1.5rem); line-height: 1.3; color: #fff;
+  margin-bottom: 1.1rem;
 }
-.about-copy p { color: #34344a; max-width: 62ch; }
-.about-copy p strong { color: var(--navy); }
-
-/* Portrait: the studio backdrop is cut out of the source image, so the subject
-   sits directly on the section background. A brand-tinted glow sits behind him
-   and a linear mask fades the bottom of the frame into the page. */
-.portrait { position: relative; margin: 0; width: 100%; max-width: 280px; text-align: center; }
-.portrait::before {
-  content: ""; position: absolute; inset: -2% -8% 24% -8%; z-index: 0; border-radius: 50%;
-  background: radial-gradient(circle at 50% 42%,
-    rgba(239,159,39,.20) 0%, rgba(239,159,39,.11) 46%, rgba(239,159,39,0) 74%);
-}
-.portrait-photo {
-  position: relative; z-index: 1;
-  display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover;
-  --portrait-fade: linear-gradient(180deg, #000 72%, transparent 99%);
-  -webkit-mask-image: var(--portrait-fade);
-          mask-image: var(--portrait-fade);
-}
-.portrait-meta { display: block; margin-top: 1rem; }
-.portrait-role {
-  display: block; font-size: .92rem; line-height: 1.45; color: var(--muted);
-}
-
-/* Name heading with the LinkedIn link sitting right beside it. */
-.name-head { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem .8rem; }
+.bio-body { font-size: 1rem; color: #cfcfe6; margin-bottom: 1.2rem; }
+.bio-attr { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem .9rem; }
+.bio-name { font-weight: 700; color: var(--amber); }
 .linkedin-pill {
   display: inline-flex; align-items: center; gap: .3rem;
-  font-size: .82rem; font-weight: 700; letter-spacing: 0; color: var(--navy);
+  font-size: .82rem; font-weight: 700; color: var(--navy);
   padding: .28rem .7rem .28rem .55rem; border: 1px solid var(--line);
-  border-radius: 999px; background: #fff; box-shadow: var(--shadow-sm);
-  position: relative; top: 2px;
+  border-radius: 999px; background: #fff;
 }
 .linkedin-pill:hover { color: var(--coral); border-color: var(--coral); text-decoration: none; }
 .linkedin-pill svg { flex: 0 0 auto; }
+.linkedin-pill--onDark {
+  color: #fff; background: transparent; border-color: rgba(255,255,255,.35);
+  box-shadow: none; top: 0;
+}
+.linkedin-pill--onDark:hover { color: var(--amber); border-color: var(--amber); }
 
-/* ---------- Steps (How it works) ---------- */
-.steps {
-  list-style: none; margin: 0 0 1.6rem; padding: 0;
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem;
-  counter-reset: none;
+.stats { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; }
+.stats li {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 1rem .95rem; font-size: .88rem; line-height: 1.4; color: var(--muted);
 }
-.step {
-  background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg);
-  padding: 1.5rem 1.4rem; box-shadow: var(--shadow-sm);
+.stat-num {
+  display: block; margin-bottom: .35rem;
+  font-family: var(--font-display); font-weight: 600; font-size: 1.6rem; color: var(--navy);
 }
-.step-num {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 34px; height: 34px; margin-bottom: .8rem;
-  border-radius: 50%; background: var(--cream); color: var(--deep-amber);
-  font-weight: 800; font-size: 1rem;
+
+
+/* ---------- How it works: four ruled columns ---------- */
+.how-grid {
+  list-style: none; margin: 2.8rem 0 2.2rem; padding: 0;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem 2.4rem;
 }
-.step h3 { margin-bottom: .4rem; font-size: 1.12rem; }
-.step p { margin: 0; color: #34344a; font-size: .98rem; }
+.how-step { border-top: 2px solid var(--navy); padding-top: 1.1rem; }
+.how-step--accent { border-top-color: var(--coral); }
+.how-num {
+  display: block; margin-bottom: .8rem;
+  font-size: .78rem; font-weight: 700; letter-spacing: .16em; color: var(--num);
+}
+.how-step--accent .how-num { color: var(--coral); }
+.how-step h3 { margin-bottom: .55rem; font-size: 1.1rem; }
+.how-step p { margin: 0; color: #34344a; font-size: .98rem; }
 
 /* ---------- Plans (Three ways in) ---------- */
 .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin: 1.8rem 0 1.4rem; }
@@ -301,10 +284,10 @@ p  { margin: 0 0 1rem; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 980px) {
-  .steps, .plans { grid-template-columns: 1fr; }
-  /* Portrait first, then the "25 years..." copy directly beneath it. */
-  .about-grid { grid-template-columns: 1fr; justify-items: center; text-align: center; }
-  .about-copy p { max-width: 62ch; text-align: left; }
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero h1, .hero-sub { max-width: none; }
+  .how-grid { grid-template-columns: 1fr 1fr; gap: 1.8rem; }
+  .plans { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .nav-links {
     position: fixed; inset: 66px 0 auto 0; flex-direction: column; align-items: stretch;
@@ -318,15 +301,18 @@ p  { margin: 0 0 1rem; }
 }
 @media (max-width: 560px) {
   body { font-size: 16px; }
-  .tcards, .footer-grid { grid-template-columns: 1fr; }
+  .tcards, .footer-grid, .how-grid { grid-template-columns: 1fr; }
+  .how-grid { gap: 1.5rem; margin-top: 2rem; }
   .brand img { height: 34px; }
+  /* Three stat cards side by side get too cramped below this width. */
+  .stats { grid-template-columns: 1fr; }
+  .stats li { display: flex; align-items: baseline; gap: .6rem; padding: .8rem .95rem; }
+  .stat-num { margin-bottom: 0; font-size: 1.35rem; }
   /* Keep the CTA on the bar at the narrowest widths by shortening the label. */
   .nav-cta { padding: .55rem .9rem; font-size: .88rem; }
   .nav-cta .cta-long { display: none; }
   .nav-cta .cta-short { display: inline; }
   .hero-cta .btn { width: 100%; justify-content: center; }
-  .proof { grid-template-columns: 1fr; gap: .9rem; }
-  .proof li + li { border-left: 0; border-top: 1px solid var(--line); padding-top: .9rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -136,10 +136,11 @@ p  { margin: 0 0 1rem; }
 }
 .portrait-meta { display: block; margin-top: 1rem; }
 .portrait-name { display: block; font-weight: 700; color: var(--navy); }
-.portrait-name a { color: var(--navy); border-bottom: 2px solid var(--amber); }
-.portrait-name a:hover { color: var(--coral); text-decoration: none; }
+.portrait-link { display: block; margin-top: .15rem; font-weight: 700; }
+.portrait-link a { color: var(--navy); border-bottom: 2px solid var(--amber); }
+.portrait-link a:hover { color: var(--coral); text-decoration: none; }
 .portrait-role {
-  display: block; margin-top: .3rem; font-size: .92rem; line-height: 1.45; color: var(--muted);
+  display: block; margin-top: .35rem; font-size: .92rem; line-height: 1.45; color: var(--muted);
 }
 
 /* ---------- Tabs (classic tabbed layout) ---------- */
@@ -223,6 +224,7 @@ p  { margin: 0 0 1rem; }
 .cta-band { background: linear-gradient(135deg, var(--dark-navy) 0%, var(--navy) 100%); color: #fff; }
 .cta-band h2 { color: #fff; }
 .cta-band p { color: #cfcfe6; max-width: 52ch; margin-inline: auto; }
+.cta-band p a { color: var(--amber); }   /* coral fails contrast on the dark band */
 .cta-band .hero-cta { justify-content: center; margin-top: 1.6rem; }
 
 /* ---------- Footer ---------- */

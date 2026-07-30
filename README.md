@@ -5,12 +5,12 @@ straight from the *AIUdaan 90-Day Launch Playbook* copy and the *AI Udaan Brand
 Guidelines v1.0*.
 
 For launch, the site is scoped to a **single offering** — the individual door —
-branded **Ascent: AI-Native Career Acceleration**. (The company / AI-transformation
-door has been held back for a later phase.) It does three things and nothing more:
+**AI-Native Career Acceleration**. (The company / AI-transformation door has been
+held back for a later phase.) It does three things and nothing more:
 
 1. **Positioning** — "Your next level isn't a skills problem. It's a last-mile problem."
-2. **The program** — *Ascent*: AI-native career acceleration for senior engineers
-   and leaders (Staff+, M1+, manager↔IC, up to Director / VP / Partner).
+2. **The program** — AI-native career acceleration for senior engineers and
+   leaders (Staff+, M1+, manager↔IC, up to Director / VP / Partner).
 3. **Proof** — testimonials, credentials, coaching track record.
 
 No framework, no build step, no database. Plain HTML/CSS/JS so it loads instantly

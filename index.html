@@ -4,20 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
-  <title>AIUdaan — Ascent: AI-Native Career Acceleration</title>
-  <meta name="description" content="Ascent: AI-native career acceleration for senior engineers and leaders operating where there's no map. We take your goal and run it like a project — the Staff/Principal promo, the first director or VP seat, the manager-to-IC move." />
-  <meta name="keywords" content="career coaching for engineers, tech career mentorship, Staff engineer promotion, Principal engineer promotion, Director promotion, VP promotion, engineering leadership coaching, manager to IC transition, IC to manager transition, executive coaching for tech leaders, AI-native career, AI career acceleration, FAANG career coach, Microsoft Google Meta mentor, senior engineer career plateau, promotion coaching, stakeholder management, career strategy, Abhishek Mishra, AIUdaan, Ascent" />
+  <title>AIUdaan — AI-Native Career Acceleration</title>
+  <meta name="description" content="AI-native career acceleration for senior engineers and leaders operating where there's no map. We take your goal and run it like a project — the Staff/Principal promo, the first director or VP seat, the manager-to-IC move." />
+  <meta name="keywords" content="career coaching for engineers, tech career mentorship, Staff engineer promotion, Principal engineer promotion, Director promotion, VP promotion, engineering leadership coaching, manager to IC transition, IC to manager transition, executive coaching for tech leaders, AI-native career, AI career acceleration, FAANG career coach, Microsoft Google Meta mentor, senior engineer career plateau, promotion coaching, stakeholder management, career strategy, Abhishek Mishra, AIUdaan" />
   <meta name="author" content="Abhishek Mishra" />
   <link rel="canonical" href="https://aiudaan.ai/" />
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://aiudaan.ai/" />
-  <meta property="og:title" content="AIUdaan — Ascent: AI-Native Career Acceleration" />
+  <meta property="og:title" content="AIUdaan — AI-Native Career Acceleration" />
   <meta property="og:description" content="For senior engineers and leaders operating where there's no map. We take your goal and run it like a project — the Staff/Principal promo, the first director or VP seat, the manager-to-IC move." />
   <meta property="og:image" content="https://aiudaan.ai/assets/img/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AIUdaan — Ascent: AI-Native Career Acceleration" />
+  <meta name="twitter:title" content="AIUdaan — AI-Native Career Acceleration" />
   <meta name="twitter:description" content="For senior engineers and leaders operating where there's no map. Hands-on career acceleration run like a project." />
   <meta name="twitter:image" content="https://aiudaan.ai/assets/img/og-image.png" />
   <meta name="theme-color" content="#1A1A5E" />
@@ -40,12 +40,12 @@
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "AIUdaan — Ascent",
+    "name": "AIUdaan",
     "url": "https://aiudaan.ai/",
     "logo": "https://aiudaan.ai/assets/img/logo-primary.png",
     "image": "https://aiudaan.ai/assets/img/og-image.png",
     "slogan": "For senior engineers and leaders operating where there's no map.",
-    "description": "Ascent is AI-native career acceleration for senior engineers and leaders — Staff/Principal promotions, the first director or VP seat, and manager-to-IC moves. We take your goal and run it like a project: stakeholder maps, influence plans, strategy docs, and blunt feedback, week by week.",
+    "description": "AI-native career acceleration for senior engineers and leaders — Staff/Principal promotions, the first director or VP seat, and manager-to-IC moves. We take your goal and run it like a project: stakeholder maps, influence plans, strategy docs, and blunt feedback, week by week.",
     "founder": {
       "@type": "Person",
       "name": "Abhishek Mishra",
@@ -65,333 +65,412 @@
 </head>
 <body>
 
-  <!-- ===================== HEADER ===================== -->
+  <a class="skip-link" href="#pitch">Skip to content</a>
+
+  <!-- ===================== HEADER =====================
+       The primary CTA lives outside .nav-links so it stays visible at every
+       breakpoint — including when the mobile menu is collapsed. -->
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="#top" aria-label="AIUdaan home">
         <img src="assets/img/logo-primary.png" alt="AI Udaan — Empowering the Future, Breaking Barriers" />
       </a>
-      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="nav-links" id="navLinks">
-        <a href="#pitch">The pitch</a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Sections">
+        <a href="#pitch">How it works</a>
+        <a href="#about">About</a>
         <a href="#testimonials">Testimonials</a>
         <a href="#ways">Three ways in</a>
         <a href="#faq">FAQ</a>
-        <a class="btn btn--primary" href="https://forms.gle/WjtAxyr5e2rtBwCfA" target="_blank" rel="noopener">Request a fit call <span class="arw">→</span></a>
       </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn--primary btn--sm nav-cta" href="https://forms.gle/WjtAxyr5e2rtBwCfA" target="_blank" rel="noopener">
+          <span class="cta-long">Request a fit call</span>
+          <span class="cta-short">Fit call</span>
+          <span class="arw">→</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
   <main id="top">
 
-    <!-- ===================== HERO / POSITIONING ===================== -->
-    <section class="hero section">
+    <!-- ===================== HERO =====================
+         Deliberately short: headline, one line of positioning, CTA. Everything
+         that used to sit here now has its own section below. -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <span class="eyebrow">AI-Native Career Acceleration</span>
+        <h1>
+          Your next level isn't a skills problem.<br />
+          It's a <span class="accent">last-mile problem.</span>
+        </h1>
+        <p class="hero-sub">
+          For senior engineers and leaders operating where there's no map. Bring
+          the goal — the Staff or Principal promo, the first director or VP seat,
+          the manager-to-IC move — and we run it like a project.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn--primary btn--lg" href="https://forms.gle/WjtAxyr5e2rtBwCfA" target="_blank" rel="noopener">Request a fit call <span class="arw">→</span></a>
+          <a class="btn btn--ghost btn--lg" href="#pitch">How it works <span class="arw">→</span></a>
+        </div>
+        <ul class="proof">
+          <li><strong>25 years</strong> inside Microsoft, Google &amp; Meta</li>
+          <li><strong>100+</strong> engineers, managers &amp; directors mentored</li>
+          <li><strong>6 clients</strong> at any time, never more</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== HOW IT WORKS ===================== -->
+    <section class="section" id="pitch">
       <div class="container">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <span class="eyebrow">AI-Native Career Acceleration</span>
-            <h1>Ascent</h1>
-            <p class="hero-sub">
-              For senior engineers and leaders operating
-              <span class="accent">where there's no map.</span>
-            </p>
+        <header class="section-head">
+          <span class="eyebrow">The pitch</span>
+          <h2>How it works</h2>
+          <p class="lead">
+            This is not advice from the sidelines. We take your goal and run it
+            like a project.
+          </p>
+        </header>
+
+        <ol class="steps">
+          <li class="step">
+            <span class="step-num">1</span>
+            <h3>We scope the project</h3>
             <p>
-              The Staff or Principal promo that keeps slipping. Your first director
-              or VP seat. The manager-to-IC move nobody teaches you to run. The
-              plateau where you know you're capable of more but can't see what's
-              holding you back. And under all of it, the worry that you're not
-              adapting to AI fast enough.
+              Map the stakeholders and build a real plan: who to talk to and in
+              what order, the doc that makes your thinking legible, the strategic
+              frame that turns an opinion into a case.
+            </p>
+          </li>
+          <li class="step">
+            <span class="step-num">2</span>
+            <h3>We work it week by week</h3>
+            <p>
+              You leave each session with specific tasks — the draft to write, the
+              conversation to have, the thing to try. I give you blunt feedback and
+              we adjust as reality pushes back.
+            </p>
+          </li>
+          <li class="step">
+            <span class="step-num">3</span>
+            <h3>I do the other half</h3>
+            <p>
+              Between sessions I research your exact situation and send resources
+              chosen for it, not a generic list. For every hour we spend one on
+              one, I spend an equal hour on the work behind it.
+            </p>
+          </li>
+        </ol>
+
+        <p class="note">
+          Everything we build is yours, and we work from your real situation
+          without needing anything you can't share — no confidential docs, nothing
+          against policy.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn btn--primary" href="https://forms.gle/WjtAxyr5e2rtBwCfA" target="_blank" rel="noopener">Request a fit call <span class="arw">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT =====================
+         Portrait sits immediately above the "25 years" line, so the face and the
+         credibility claim land together. -->
+    <section class="section section--tint" id="about">
+      <div class="container">
+        <header class="section-head">
+          <span class="eyebrow">Who you'd be working with</span>
+          <h2 class="name-head">
+            Abhishek Mishra
+            <a class="linkedin-pill" href="https://www.linkedin.com/in/abhishekkmishra/"
+               target="_blank" rel="noopener" aria-label="Abhishek Mishra on LinkedIn">
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+                <path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05A4.2 4.2 0 0 1 17.6 8.7c3 0 3.4 1.9 3.4 4.6V21h-4v-6.3c0-1.5-.3-2.7-1.9-2.7s-2.1 1.2-2.1 2.6V21h-4z"/>
+              </svg>
+              LinkedIn
+            </a>
+          </h2>
+        </header>
+
+        <div class="about-grid">
+          <figure class="portrait">
+            <img class="portrait-photo" src="assets/img/abhishek-mishra.webp"
+                 alt="Abhishek Mishra" width="760" height="950" loading="lazy" decoding="async" />
+            <figcaption class="portrait-meta">
+              <span class="portrait-role">Former Director at Meta and Google. Partner at Microsoft.</span>
+            </figcaption>
+          </figure>
+
+          <div class="about-copy">
+            <p>
+              <strong>25 years inside Microsoft, Google, and Meta.</strong> Long
+              enough to learn how these places really work and how growth actually
+              happens.
             </p>
             <p>
               A few years ago, as a Director, I went back to an IC role after 22
               years away from one. That took more resilience than any promotion I
               ever earned, and leaning on AI when it was still early gave me the
-              intuition that became my edge. Across 25 years inside Microsoft,
-              Google, and Meta, I learned how these places really work and how
-              growth actually happens. Navigating that system, adapting to AI, and
-              staying steady when the ground shifts: that is what I teach.
+              intuition that became my edge.
             </p>
-            <div class="hero-cta">
-              <a class="btn btn--primary" href="https://forms.gle/WjtAxyr5e2rtBwCfA" target="_blank" rel="noopener">Request a fit call <span class="arw">→</span></a>
-              <a class="btn btn--ghost" href="#pitch">How it works <span class="arw">→</span></a>
-            </div>
-          </div>
-
-          <div class="hero-art">
-            <figure class="portrait">
-              <img class="portrait-photo" src="assets/img/abhishek-mishra.webp"
-                   alt="Abhishek Mishra" width="760" height="950" loading="eager" decoding="async" />
-              <figcaption class="portrait-meta">
-                <span class="portrait-name">Abhishek Mishra</span>
-                <span class="portrait-link">
-                  <a href="https://www.linkedin.com/in/abhishekkmishra/" target="_blank" rel="noopener">LinkedIn</a>
-                </span>
-                <span class="portrait-role">Former Director at Meta and Google. Partner at Microsoft.</span>
-              </figcaption>
-            </figure>
+            <p>
+              Navigating that system, adapting to AI, and staying steady when the
+              ground shifts: that is what I teach. I've been doing this for ten
+              years, through the pre-AI era and now the AI one.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===================== TABS ===================== -->
-    <section class="tabs section" id="tabs">
+    <!-- ===================== TESTIMONIALS =====================
+         Each card leads with a short excerpt; the full story is behind a
+         disclosure so the page stays scannable. -->
+    <section class="section" id="testimonials">
       <div class="container">
-        <nav class="tab-links" role="tablist" aria-label="Ascent sections">
-          <a class="tab-link" id="tab-pitch" href="#pitch" role="tab" aria-controls="pitch" aria-selected="true">The pitch</a>
-          <a class="tab-link" id="tab-testimonials" href="#testimonials" role="tab" aria-controls="testimonials" aria-selected="false">Testimonials</a>
-          <a class="tab-link" id="tab-ways" href="#ways" role="tab" aria-controls="ways" aria-selected="false">Three ways in</a>
-          <a class="tab-link" id="tab-faq" href="#faq" role="tab" aria-controls="faq" aria-selected="false">FAQ</a>
-        </nav>
-
-        <!-- ---------- Tab: The pitch ---------- -->
-        <article class="tab-panel" id="pitch" role="tabpanel" aria-labelledby="tab-pitch" tabindex="0">
-          <span class="eyebrow">The pitch</span>
-          <h2>How it works</h2>
-          <p class="lead">
-            This is not advice from the sidelines. We take your goal and run it like
-            a project.
-          </p>
-          <p>
-            Say you can't get a skeptical org to move on your ideas. Or you're
-            clearly doing the work, but the Staff case never quite lands. Either
-            way, we treat it as the project: scope it at a high level, map the
-            stakeholders, and build a real plan. Who to talk to and in what order,
-            the doc that makes your thinking legible, the strategic frame that turns
-            an opinion into a case. Then we work it week by week, I give you blunt
-            feedback, and we adjust as reality pushes back.
-          </p>
-          <p>
-            Everything we build is yours, and we work from your real situation
-            without needing anything you can't share. No confidential design doc,
-            nothing against policy. The stakeholder map, the influence plan, the
-            strategy doc, the talking points for the conversation you're dreading:
-            we make those together, for you.
-          </p>
-          <div class="callout">
-            <h4>The other half of the work</h4>
-            <p>
-              Because it runs like a project, you leave each session with specific
-              tasks to move it forward, the draft to write, the conversation to
-              have, the thing to try before we next meet. Between sessions I do the
-              other half. I research your exact situation and send resources chosen
-              for it, not a generic list. Sometimes that is strategic or
-              organizational, just as often technical, because real depth and
-              breadth are how senior people earn the room and make the case for the
-              next level. For every hour we spend one on one, I spend an equal hour
-              on the work behind it. I've been doing this for ten years, through the
-              pre-AI era and now the AI one.
-            </p>
-          </div>
-          <div class="hero-cta">
-            <a class="btn btn--primary" href="https://forms.gle/WjtAxyr5e2rtBwCfA" target="_blank" rel="noopener">Request a fit call <span class="arw">→</span></a>
-          </div>
-        </article>
-
-        <!-- ---------- Tab: Testimonials ---------- -->
-        <article class="tab-panel" id="testimonials" role="tabpanel" aria-labelledby="tab-testimonials" tabindex="0">
+        <header class="section-head">
           <span class="eyebrow">Testimonials</span>
           <h2>Outcomes, not adjectives</h2>
           <p class="lead">
-            Over the last decade I've worked with 100+ engineers, managers,
-            directors, and partners at the largest tech companies. Many earned a
-            hard promotion; others got unstuck, changed direction, or grew into VP
-            and partner roles.
+            Over the last decade, 100+ engineers, managers, directors, and partners
+            at the largest tech companies. Many earned a hard promotion; others got
+            unstuck, changed direction, or grew into VP and partner roles.
           </p>
+        </header>
 
-          <div class="tcards">
-            <figure class="tcard">
-              <h3 class="tcard-title">He changed my trajectory, not just my title</h3>
-              <p class="tcard-arc">Data engineer at Meta → Member of Technical Staff at OpenAI</p>
-              <blockquote class="quote">
+        <div class="tcards">
+          <figure class="tcard">
+            <h3 class="tcard-title">He changed my trajectory, not just my title</h3>
+            <p class="tcard-arc">Data engineer at Meta → Member of Technical Staff at OpenAI</p>
+            <blockquote class="quote">
+              Over about a year he helped me earn a genuinely hard promotion to
+              senior staff, and then did something more important: he designed
+              working sessions to build AI agents.
+            </blockquote>
+            <details class="tmore">
+              <summary>Read the full story</summary>
+              <p>
                 I was a data engineer at Meta, established but ready for the next
-                step, when Abhishek started mentoring me. Over about a year he
-                helped me earn a genuinely hard promotion to senior staff, and then
-                did something more important: he designed working sessions to build
-                AI agents, and had me apply real software engineering skills to
-                build an agent for the data engineering function itself. That
-                hands-on work was pivotal to my career trajectory at Meta,
-                eventually landing me as Member of Technical Staff role at OpenAI.
-                He didn't just help me climb one rung. He changed my trajectory
-                entirely.
-              </blockquote>
-            </figure>
-            <figure class="tcard">
-              <h3 class="tcard-title">From scattered energy to real direction</h3>
-              <p class="tcard-arc">IC → VP at Tempus AI</p>
-              <blockquote class="quote">
+                step, when Abhishek started mentoring me. He had me apply real
+                software engineering skills to build an agent for the data
+                engineering function itself. That hands-on work was pivotal to my
+                career trajectory at Meta, eventually landing me as Member of
+                Technical Staff role at OpenAI. He didn't just help me climb one
+                rung. He changed my trajectory entirely.
+              </p>
+            </details>
+          </figure>
+
+          <figure class="tcard">
+            <h3 class="tcard-title">From scattered energy to real direction</h3>
+            <p class="tcard-arc">IC → VP at Tempus AI</p>
+            <blockquote class="quote">
+              I was trying many things at once and Abhishek organized my thinking,
+              turning my scattered energy into real direction.
+            </blockquote>
+            <details class="tmore">
+              <summary>Read the full story</summary>
+              <p>
                 When Abhishek became my manager, I was ambitious and eager to do
-                more but I lacked a clear direction to grow toward. I was trying
-                many things at once and Abhishek organized my thinking, turning my
-                scattered energy into real direction. He pushed me deep into AI
-                strategy for the org, coached me on stakeholder communication and
-                managing up, gave me wide latitude to operate, and stretched me
-                well past where I'd have aimed on my own.
-                <br /><br />
+                more but I lacked a clear direction to grow toward. He pushed me
+                deep into AI strategy for the org, coached me on stakeholder
+                communication and managing up, gave me wide latitude to operate,
+                and stretched me well past where I'd have aimed on my own.
+              </p>
+              <p>
                 Even after he left Google, I kept going back to him because his
                 guidance remains extremely valuable to me. He is my most trusted
                 mentor, guiding me to a VP role at Tempus AI. He helps me see when
                 I'm operating from fear rather than clarity, recognizes what I'm
                 capable of before I can, and has the conviction to push me toward
                 it. I still go to him today for the big questions.
-              </blockquote>
-            </figure>
-            <figure class="tcard">
-              <h3 class="tcard-title">The confidence to move from manager back to IC</h3>
-              <p class="tcard-arc">Manager → IC (Azure, then Meta)</p>
-              <blockquote class="quote">
+              </p>
+            </details>
+          </figure>
+
+          <figure class="tcard">
+            <h3 class="tcard-title">The confidence to move from manager back to IC</h3>
+            <p class="tcard-arc">Manager → IC (Azure, then Meta)</p>
+            <blockquote class="quote">
+              Abhishek became an invaluable mentor as I transitioned from a manager
+              back to an IC — a challenging yet rewarding path.
+            </blockquote>
+            <details class="tmore">
+              <summary>Read the full story</summary>
+              <p>
                 I first worked with Abhishek at Azure, and years later, our paths
                 crossed again at Meta. By then, he was a highly respected senior
-                leader in our organization. During a pivotal moment in my career,
-                Abhishek became an invaluable mentor as I transitioned from a
-                manager back to an IC—a challenging yet rewarding path. What
-                impressed me most wasn't just his deep leadership experience, but
-                his remarkable foresight; he was thinking strategically about the
-                trajectory of AI years before its impact became obvious to the
-                wider industry. He has a genuine interest in coaching others and is
-                widely considered a great mentor. His advice was always direct,
-                practical, and grounded in real-world experience, playing a
+                leader in our organization. What impressed me most wasn't just his
+                deep leadership experience, but his remarkable foresight; he was
+                thinking strategically about the trajectory of AI years before its
+                impact became obvious to the wider industry. His advice was always
+                direct, practical, and grounded in real-world experience, playing a
                 significant role in helping me find my footing and confidence in my
                 new role.
-              </blockquote>
-            </figure>
-            <figure class="tcard">
-              <h3 class="tcard-title">From doing the work to loving the field</h3>
-              <p class="tcard-arc">Meta → Anthropic</p>
-              <blockquote class="quote">
+              </p>
+            </details>
+          </figure>
+
+          <figure class="tcard">
+            <h3 class="tcard-title">From doing the work to loving the field</h3>
+            <p class="tcard-arc">Meta → Anthropic</p>
+            <blockquote class="quote">
+              He pushed me to think beyond the next promotion toward what actually
+              fulfills me, which turned out to be doing meaningful work in AI.
+            </blockquote>
+            <details class="tmore">
+              <summary>Read the full story</summary>
+              <p>
                 Abhishek is one of the most empathetic mentors I've worked with,
-                and the person who introduced me to the world of AI. He pushed me
-                to think beyond the next promotion toward what actually fulfills
-                me, which turned out to be doing meaningful work in AI. He kept
+                and the person who introduced me to the world of AI. He kept
                 sharing relevant research papers and new developments. Somewhere in
                 that process, I went from just doing the work to genuinely loving
                 the field. I started reading papers on my own and got deep into
                 evals. He kept mentoring me even after I moved to an entirely
                 different org and then to a different company. His highly
                 personalized mentoring changed the trajectory of my career.
-              </blockquote>
-            </figure>
-            <figure class="tcard">
-              <h3 class="tcard-title">He mapped what I couldn't see</h3>
-              <p class="tcard-arc">Reached out cold in 2020 → now VP at Microsoft</p>
-              <blockquote class="quote">
+              </p>
+            </details>
+          </figure>
+
+          <figure class="tcard">
+            <h3 class="tcard-title">He mapped what I couldn't see</h3>
+            <p class="tcard-arc">Reached out cold in 2020 → now VP at Microsoft</p>
+            <blockquote class="quote">
+              He did something no one else had: he mapped out my organization and
+              the key relationships around me, helping me see the situation much
+              more clearly.
+            </blockquote>
+            <details class="tmore">
+              <summary>Read the full story</summary>
+              <p>
                 I reached out to Abhishek in 2020 because I felt I had more
-                potential than I was able to realize on my own. He did something no
-                one else had: he mapped out my organization and the key
-                relationships around me, helping me see the situation much more
-                clearly. Based on his guidance, I moved to a new team where I had
-                the full support of my manager, and I developed a much stronger
-                sense of ownership and agency in shaping my own career. Those
-                changes have had a lasting impact, and I've since grown into a VP
-                role. I had written a recommendation for him years earlier about
-                his persistence and how deeply he invests in helping people grow. A
-                decade later, I'm living proof of exactly that. I still reach out
-                to him for advice from time to time.
-              </blockquote>
-            </figure>
-          </div>
-        </article>
+                potential than I was able to realize on my own. Based on his
+                guidance, I moved to a new team where I had the full support of my
+                manager, and I developed a much stronger sense of ownership and
+                agency in shaping my own career. Those changes have had a lasting
+                impact, and I've since grown into a VP role. I had written a
+                recommendation for him years earlier about his persistence and how
+                deeply he invests in helping people grow. A decade later, I'm
+                living proof of exactly that.
+              </p>
+            </details>
+          </figure>
+        </div>
+      </div>
+    </section>
 
-        <!-- ---------- Tab: Three ways in ---------- -->
-        <article class="tab-panel" id="ways" role="tabpanel" aria-labelledby="tab-ways" tabindex="0">
-          <span class="eyebrow">Engagements</span>
-          <h2>Three ways in</h2>
+    <!-- ===================== THREE WAYS IN ===================== -->
+    <section class="section section--tint" id="ways">
+      <div class="container">
+        <header class="section-head">
+          <span class="eyebrow">Three ways in</span>
+          <h2>Start where it makes sense</h2>
           <p class="lead">
-            Start where it makes sense. Every engagement credits forward, so if you
-            begin small and go deeper, what you've already paid comes with you.
+            Every engagement credits forward, so if you begin small and go deeper,
+            what you've already paid comes with you.
           </p>
-          <div class="plans">
-            <div class="plan">
-              <h3>Diagnostic</h3>
-              <p class="price">$3,000</p>
-              <p>
-                One deep session where we map your whole board. If you want, I'll
-                also take one call with your manager or a trusted peer for
-                additional perspective. You leave with a written read of where you
-                actually stand and a plan for the next six months, and within a
-                week we meet again to debrief the written plan. If you continue,
-                this credits in full.
-              </p>
-            </div>
-            <div class="plan">
-              <h3>Half Arc</h3>
-              <p class="price">$14,000</p>
-              <p>
-                Six sessions over three months. Enough to land a specific promotion
-                or run a hard transition, with the between-session work behind every
-                one.
-              </p>
-            </div>
-            <div class="plan plan--full">
-              <h3>Full Arc</h3>
-              <p class="price">$24,000</p>
-              <p>
-                Twelve sessions over six months. The full arc, and where this does
-                its best work: a real project taken end to end, long enough to
-                change not just your title but the kind of engineer or leader you
-                become.
-              </p>
-            </div>
-          </div>
-          <p class="plans-note">Each session One-on-one only. Six clients at any time, never more.</p>
-          <div class="hero-cta">
-            <a class="btn btn--primary" href="https://forms.gle/WjtAxyr5e2rtBwCfA" target="_blank" rel="noopener">Request a fit call <span class="arw">→</span></a>
-          </div>
-        </article>
+        </header>
 
-        <!-- ---------- Tab: FAQ ---------- -->
-        <article class="tab-panel" id="faq" role="tabpanel" aria-labelledby="tab-faq" tabindex="0">
+        <div class="plans">
+          <div class="plan">
+            <h3>Diagnostic</h3>
+            <p class="price">$3,000</p>
+            <p>
+              One deep session where we map your whole board. You leave with a
+              written read of where you actually stand and a plan for the next six
+              months, then we meet again within a week to debrief it. If you
+              continue, this credits in full.
+            </p>
+          </div>
+          <div class="plan">
+            <h3>Half Arc</h3>
+            <p class="price">$14,000</p>
+            <p>
+              Six sessions over three months. Enough to land a specific promotion
+              or run a hard transition, with the between-session work behind every
+              one.
+            </p>
+          </div>
+          <div class="plan plan--full">
+            <h3>Full Arc</h3>
+            <p class="price">$24,000</p>
+            <p>
+              Twelve sessions over six months. Where this does its best work: a
+              real project taken end to end, long enough to change not just your
+              title but the kind of engineer or leader you become.
+            </p>
+          </div>
+        </div>
+
+        <p class="plans-note">One-on-one only. Six clients at any time, never more.</p>
+
+        <div class="hero-cta">
+          <a class="btn btn--primary" href="https://forms.gle/WjtAxyr5e2rtBwCfA" target="_blank" rel="noopener">Request a fit call <span class="arw">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="section" id="faq">
+      <div class="container">
+        <header class="section-head">
           <span class="eyebrow">FAQ</span>
           <h2>Frequently asked questions</h2>
-          <details class="faq-item" open>
-            <summary>Who is this for?</summary>
-            <ul>
-              <li>Staff, Principal, and Distinguished engineers</li>
-              <li>Managers, from first-line up through Director and VP</li>
-              <li>People converting between IC and management, in either direction</li>
-              <li>Anyone I've mentored before. You already know how I work</li>
-            </ul>
-          </details>
-          <details class="faq-item">
-            <summary>Who is this not for?</summary>
-            <ul>
-              <li>Anyone who wants interview cramming, a resume rewrite, or answers from a distance</li>
-              <li>Anyone who wants reassurance more than the truth. I give blunt feedback, and this only pays off if you can take it and act on it</li>
-              <li>Anyone looking for a light-touch monthly check-in. This is hands-on and asks real work of you between sessions</li>
-            </ul>
-          </details>
-          <details class="faq-item">
-            <summary>How do we start?</summary>
-            <p>
-              <a href="https://forms.gle/WjtAxyr5e2rtBwCfA" target="_blank" rel="noopener">Request a Fit Call</a>,
-              if fit then we do one short call, fifteen or twenty minutes, to decide
-              whether we should work together. We both figure out if there's a real
-              fit. If there is, we start with the <a href="#ways">Diagnostic</a>.
-            </p>
-          </details>
-          <div class="hero-cta">
-            <a class="btn btn--primary" href="https://forms.gle/WjtAxyr5e2rtBwCfA" target="_blank" rel="noopener">Request a fit call <span class="arw">→</span></a>
-          </div>
-        </article>
+        </header>
 
+        <details class="faq-item" open>
+          <summary>Who is this for?</summary>
+          <ul>
+            <li>Staff, Principal, and Distinguished engineers</li>
+            <li>Managers, from first-line up through Director and VP</li>
+            <li>People converting between IC and management, in either direction</li>
+            <li>Anyone I've mentored before. You already know how I work</li>
+          </ul>
+        </details>
+        <details class="faq-item">
+          <summary>Who is this not for?</summary>
+          <ul>
+            <li>Anyone who wants interview cramming, a resume rewrite, or answers from a distance</li>
+            <li>Anyone who wants reassurance more than the truth. I give blunt feedback, and this only pays off if you can take it and act on it</li>
+            <li>Anyone looking for a light-touch monthly check-in. This is hands-on and asks real work of you between sessions</li>
+          </ul>
+        </details>
+        <details class="faq-item">
+          <summary>How do we start?</summary>
+          <p>
+            <a href="https://forms.gle/WjtAxyr5e2rtBwCfA" target="_blank" rel="noopener">Request a fit call</a>.
+            If it looks like a fit, we do one short call — fifteen or twenty
+            minutes — to decide whether we should work together. If there's a real
+            fit, we start with the <a href="#ways">Diagnostic</a>.
+          </p>
+        </details>
+
+        <div class="hero-cta">
+          <a class="btn btn--primary" href="https://forms.gle/WjtAxyr5e2rtBwCfA" target="_blank" rel="noopener">Request a fit call <span class="arw">→</span></a>
+        </div>
       </div>
     </section>
 
     <!-- ===================== FINAL CTA ===================== -->
     <section class="cta-band section" id="contact">
       <div class="container center">
-        <span class="eyebrow" style="color:var(--amber)">Get started</span>
+        <span class="eyebrow">Get started</span>
         <h2>How to start</h2>
         <p>
-          <a href="https://forms.gle/WjtAxyr5e2rtBwCfA" target="_blank" rel="noopener">Request a Fit Call</a>,
-          if fit then we do one short call, fifteen or twenty minutes, to decide
-          whether we should work together. We both figure out if there's a real fit.
-          If there is, we start with the Diagnostic.
+          Request a fit call. If it looks like a fit, we do one short call —
+          fifteen or twenty minutes — to decide whether we should work together.
+          If there's a real fit, we start with the Diagnostic.
         </p>
         <div class="hero-cta">
-          <a class="btn btn--primary" href="https://forms.gle/WjtAxyr5e2rtBwCfA" target="_blank" rel="noopener">Request a fit call <span class="arw">→</span></a>
+          <a class="btn btn--amber btn--lg" href="https://forms.gle/WjtAxyr5e2rtBwCfA" target="_blank" rel="noopener">Request a fit call <span class="arw">→</span></a>
         </div>
       </div>
     </section>
@@ -413,14 +492,14 @@
         </div>
         <div class="footer-col">
           <h4>Explore</h4>
-          <a href="#pitch">The pitch</a>
+          <a href="#pitch">How it works</a>
+          <a href="#about">About</a>
           <a href="#testimonials">Testimonials</a>
           <a href="#ways">Three ways in</a>
           <a href="#faq">FAQ</a>
         </div>
         <div class="footer-col">
           <h4>Connect</h4>
-          <a href="mailto:akmishra@ainativex.ai">akmishra@ainativex.ai</a>
           <a href="https://www.linkedin.com/in/abhishekkmishra/" target="_blank" rel="noopener">LinkedIn</a>
           <a href="https://forms.gle/WjtAxyr5e2rtBwCfA" target="_blank" rel="noopener">Request a fit call</a>
         </div>

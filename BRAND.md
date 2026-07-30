@@ -45,15 +45,16 @@ implemented as CSS variables at the top of `assets/css/styles.css`.
 500 Million", "Sabka AI, Sabki Udaan", "Empowering the Future, Breaking Barriers")
 read as *mass-market / accessible-tech* — which clashes with what this site actually
 sells today: premium, hands-on career acceleration for senior engineers and
-leaders. For launch the site is scoped to that single offering, branded **Ascent:
-AI-Native Career Acceleration**, and leads with **positioning** lines, not the
+leaders. For launch the site is scoped to that single offering,
+**AI-Native Career Acceleration**, and leads with **positioning** lines, not the
 mass-market ones:
 
-- Offering name: *Ascent — AI-Native Career Acceleration* (the "gym-coach" model,
-  deliberately *not* framed as generic "mentoring / coaching").
+- Offering descriptor: *AI-Native Career Acceleration* (the "gym-coach" model,
+  deliberately *not* framed as generic "mentoring / coaching"). No sub-brand name
+  is used — the offering sits directly under AIUdaan.
 - Hero headline: *"Your next level isn't a skills problem. It's a last-mile problem."*
 - Footer tagline: *"Across the last mile of your career"*
-- The "Ascent" / climb metaphor ties back to the Udaan (उड़ान = flight) phoenix
+- The last-mile / climb metaphor ties back to the Udaan (उड़ान = flight) phoenix
   brand: the last mile of the climb — Staff → Principal, manager ↔ IC, up to
   Director / VP / Partner.
 

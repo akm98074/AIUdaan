@@ -22,55 +22,35 @@
     });
   }
 
-  // Tabbed sections (hash-linked; without JS all panels stack as plain sections)
-  var tabs = document.getElementById("tabs");
-  if (tabs) {
-    var tabLinks = tabs.querySelectorAll(".tab-link");
-    var tabPanels = tabs.querySelectorAll(".tab-panel");
-    var tabBar = tabs.querySelector(".tab-links");
-    tabs.classList.add("js-tabs");
+  // Highlight the nav link for the section currently in view.
+  if (links && "IntersectionObserver" in window) {
+    var navLinks = Array.prototype.slice.call(links.querySelectorAll('a[href^="#"]'));
+    var sections = navLinks
+      .map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); })
+      .filter(Boolean);
 
-    var activate = function (id, scroll) {
-      var found = false;
-      tabPanels.forEach(function (p) {
-        if (p.id === id) found = true;
-      });
-      if (!found) return;
-      tabPanels.forEach(function (p) {
-        p.classList.toggle("is-active", p.id === id);
-      });
-      tabLinks.forEach(function (l) {
-        var active = l.getAttribute("aria-controls") === id;
-        l.classList.toggle("is-active", active);
-        l.setAttribute("aria-selected", active ? "true" : "false");
-      });
-      // Bring the tab bar into view when arriving from far away (footer, deep link)
-      if (scroll && tabBar) {
-        var r = tabBar.getBoundingClientRect();
-        if (r.top < 0 || r.top > window.innerHeight - 160) tabBar.scrollIntoView();
-      }
-    };
+    if (sections.length) {
+      var visible = Object.create(null);
 
-    var syncFromHash = function (scroll) {
-      activate(location.hash ? location.hash.slice(1) : "pitch", scroll);
-    };
+      var paint = function () {
+        // Topmost visible section wins, so overlapping sections don't fight.
+        var current = null;
+        sections.forEach(function (s) {
+          if (visible[s.id] && !current) current = s.id;
+        });
+        navLinks.forEach(function (a) {
+          a.classList.toggle("is-current", a.getAttribute("href") === "#" + current);
+        });
+      };
 
-    window.addEventListener("hashchange", function () { syncFromHash(true); });
-    syncFromHash(location.hash !== "");
-    if (!location.hash) activate("pitch", false);
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          visible[entry.target.id] = entry.isIntersecting;
+        });
+        paint();
+      }, { rootMargin: "-72px 0px -55% 0px", threshold: 0 });
 
-    // Arrow-key navigation on the tab bar
-    if (tabBar) {
-      tabBar.addEventListener("keydown", function (e) {
-        if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
-        var links = Array.prototype.slice.call(tabLinks);
-        var i = links.indexOf(document.activeElement);
-        if (i === -1) return;
-        e.preventDefault();
-        var next = links[(i + (e.key === "ArrowRight" ? 1 : links.length - 1)) % links.length];
-        next.focus();
-        next.click();
-      });
+      sections.forEach(function (s) { observer.observe(s); });
     }
   }
 

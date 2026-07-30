@@ -66,6 +66,17 @@ p  { margin: 0 0 1rem; }
 .center { text-align: center; }
 .lead { font-size: 1.15rem; color: var(--muted); }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+.section--tint { background: var(--cream-soft); border-block: 1px solid var(--line); }
+.section-head { max-width: 62ch; margin-bottom: 2.2rem; }
+.section-head h2 { margin-bottom: .6rem; }
+.section-head .lead { margin-bottom: 0; }
+.note { max-width: 66ch; color: var(--muted); font-size: .98rem; }
+
+.skip-link {
+  position: absolute; left: -9999px; top: 0; z-index: 100;
+  background: var(--navy); color: #fff; padding: .7rem 1.1rem; border-radius: 0 0 var(--radius) 0;
+}
+.skip-link:focus { left: 0; text-decoration: none; }
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -86,19 +97,30 @@ p  { margin: 0 0 1rem; }
 .btn--ghost:hover { background: var(--navy); color: #fff; }
 .btn--light { background: #fff; color: var(--navy); border-color: var(--line); }
 .btn--light:hover { border-color: var(--navy); }
+.btn--lg { padding: 1rem 1.8rem; font-size: 1.05rem; }
+.btn--sm { padding: .6rem 1.1rem; font-size: .92rem; }
 
 /* ---------- Header / Nav ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(255,255,255,.88); backdrop-filter: saturate(160%) blur(10px);
+  background: rgba(255,255,255,.94); backdrop-filter: saturate(160%) blur(12px);
   border-bottom: 1px solid var(--line);
 }
 .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 12px; }
 .brand { display: inline-flex; align-items: center; gap: .6rem; }
 .brand img { height: 42px; width: auto; }
-.nav-links { display: flex; align-items: center; gap: 1.6rem; }
-.nav-links a { color: var(--navy); font-weight: 600; font-size: .98rem; }
-.nav-links a:not(.btn):hover { color: var(--coral); text-decoration: none; }
+.nav-links { display: flex; align-items: center; gap: 1.5rem; }
+.nav-links a {
+  color: var(--navy); font-weight: 600; font-size: .98rem;
+  padding-bottom: 2px; border-bottom: 2px solid transparent;
+}
+.nav-links a:hover { color: var(--coral); text-decoration: none; }
+.nav-links a.is-current { color: var(--coral); border-bottom-color: var(--amber); }
+
+/* The CTA sits outside .nav-links so it is never hidden by the mobile menu. */
+.nav-actions { display: flex; align-items: center; gap: .5rem; }
+.nav-cta { flex: 0 0 auto; white-space: nowrap; }
+.nav-cta .cta-short { display: none; }
 .nav-toggle { display: none; background: none; border: 0; cursor: pointer; padding: 8px; }
 .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--navy); margin: 5px 0; transition: .2s; }
 
@@ -111,17 +133,44 @@ p  { margin: 0 0 1rem; }
     radial-gradient(560px 380px at -6% 18%, rgba(26,26,94,.08), transparent 60%);
 }
 .hero .container { position: relative; z-index: 1; }
-.hero-grid { display: grid; grid-template-columns: 1.35fr .65fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+
+/* Short by design: headline, one line of positioning, CTA — all above the fold. */
+.hero-inner {
+  padding-block: clamp(44px, 7vw, 84px);
+  max-width: 860px; text-align: center;
+}
+.hero h1 { margin-bottom: 1rem; }
 .hero .accent { color: var(--coral); }
-.hero-sub { font-size: 1.3rem; font-weight: 700; color: var(--navy); max-width: 34ch; margin-bottom: 1.2rem; }
-.hero-copy > p:not(.hero-sub) { color: #3a3a52; max-width: 58ch; }
+.hero-sub {
+  font-size: clamp(1.05rem, 2vw, 1.22rem); color: #3a3a52;
+  max-width: 56ch; margin: 0 auto 1.6rem;
+}
 .hero-cta { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 1.6rem; }
-.hero-art { display: flex; justify-content: center; align-items: flex-start; }
+.hero-inner .hero-cta { justify-content: center; margin-top: 0; }
+
+/* Grid rather than wrapping flex, so the dividers never orphan onto a new line. */
+.proof {
+  list-style: none; margin: 2.4rem auto 0; padding: 0;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+  font-size: .92rem; line-height: 1.45; color: var(--muted);
+  max-width: 780px; text-align: center;
+}
+.proof li { padding-inline: .9rem; }
+.proof li + li { border-left: 1px solid var(--line); }
+.proof strong { display: block; color: var(--navy); font-weight: 800; font-size: 1.05rem; }
+
+/* ---------- About ---------- */
+.about-grid {
+  display: grid; grid-template-columns: 280px 1fr;
+  gap: clamp(1.6rem, 4vw, 3.2rem); align-items: start;
+}
+.about-copy p { color: #34344a; max-width: 62ch; }
+.about-copy p strong { color: var(--navy); }
 
 /* Portrait: the studio backdrop is cut out of the source image, so the subject
-   sits directly on the hero gradient. A brand-tinted glow sits behind him and
-   a linear mask fades the bottom of the frame into the page. */
-.portrait { position: relative; margin: 0; width: 100%; max-width: 300px; text-align: center; }
+   sits directly on the section background. A brand-tinted glow sits behind him
+   and a linear mask fades the bottom of the frame into the page. */
+.portrait { position: relative; margin: 0; width: 100%; max-width: 280px; text-align: center; }
 .portrait::before {
   content: ""; position: absolute; inset: -2% -8% 24% -8%; z-index: 0; border-radius: 50%;
   background: radial-gradient(circle at 50% 42%,
@@ -135,43 +184,40 @@ p  { margin: 0 0 1rem; }
           mask-image: var(--portrait-fade);
 }
 .portrait-meta { display: block; margin-top: 1rem; }
-.portrait-name { display: block; font-weight: 700; color: var(--navy); }
-.portrait-link { display: block; margin-top: .15rem; font-weight: 700; }
-.portrait-link a { color: var(--navy); border-bottom: 2px solid var(--amber); }
-.portrait-link a:hover { color: var(--coral); text-decoration: none; }
 .portrait-role {
-  display: block; margin-top: .35rem; font-size: .92rem; line-height: 1.45; color: var(--muted);
+  display: block; font-size: .92rem; line-height: 1.45; color: var(--muted);
 }
 
-/* ---------- Tabs (classic tabbed layout) ---------- */
-.tabs { background: #fff; padding-top: clamp(28px, 4vw, 48px); }
-.tab-links {
-  display: flex; flex-wrap: wrap; gap: .35rem; align-items: flex-end;
-  border-bottom: 2px solid var(--navy); padding: 0 .5rem; margin-bottom: 2rem;
+/* Name heading with the LinkedIn link sitting right beside it. */
+.name-head { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem .8rem; }
+.linkedin-pill {
+  display: inline-flex; align-items: center; gap: .3rem;
+  font-size: .82rem; font-weight: 700; letter-spacing: 0; color: var(--navy);
+  padding: .28rem .7rem .28rem .55rem; border: 1px solid var(--line);
+  border-radius: 999px; background: #fff; box-shadow: var(--shadow-sm);
+  position: relative; top: 2px;
 }
-.tab-link {
-  display: inline-block; padding: .75rem 1.4rem; margin-bottom: -2px;
-  font-weight: 700; font-size: 1rem; color: var(--navy);
-  background: var(--cream-soft); border: 1px solid var(--line); border-bottom: 2px solid var(--navy);
-  border-radius: 12px 12px 0 0;
+.linkedin-pill:hover { color: var(--coral); border-color: var(--coral); text-decoration: none; }
+.linkedin-pill svg { flex: 0 0 auto; }
+
+/* ---------- Steps (How it works) ---------- */
+.steps {
+  list-style: none; margin: 0 0 1.6rem; padding: 0;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem;
+  counter-reset: none;
 }
-.tab-link:hover { text-decoration: none; background: var(--cream); color: var(--coral); }
-.tab-link.is-active {
-  background: #fff; color: var(--coral);
-  border-color: var(--navy); border-bottom-color: #fff;
+.step {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg);
+  padding: 1.5rem 1.4rem; box-shadow: var(--shadow-sm);
 }
-.tab-panel { max-width: none; }
-.tab-panel:focus { outline: none; }
-.tab-panel ul { list-style: none; padding: 0; margin: .4rem 0 1.4rem; }
-.tab-panel ul li { position: relative; padding-left: 1.6rem; margin-bottom: .55rem; color: #34344a; }
-.tab-panel ul li::before {
-  content: ""; position: absolute; left: 0; top: .55em; width: 8px; height: 8px;
-  border-radius: 2px; background: var(--amber); transform: rotate(45deg);
+.step-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; margin-bottom: .8rem;
+  border-radius: 50%; background: var(--cream); color: var(--deep-amber);
+  font-weight: 800; font-size: 1rem;
 }
-/* JS-enabled: show only the active panel. Without JS all panels stack (anchors still work). */
-.js-tabs .tab-panel { display: none; }
-.js-tabs .tab-panel.is-active { display: block; }
-.tabs:not(.js-tabs) .tab-panel + .tab-panel { margin-top: 3rem; padding-top: 3rem; border-top: 1px solid var(--line); }
+.step h3 { margin-bottom: .4rem; font-size: 1.12rem; }
+.step p { margin: 0; color: #34344a; font-size: .98rem; }
 
 /* ---------- Plans (Three ways in) ---------- */
 .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin: 1.8rem 0 1.4rem; }
@@ -199,13 +245,12 @@ p  { margin: 0 0 1rem; }
 .faq-item summary:hover { color: var(--coral); }
 .faq-item[open] summary { border-bottom: 1px solid var(--line); background: var(--cream-soft); }
 .faq-item ul, .faq-item p { margin: 1rem 1.3rem; }
-
-.callout {
-  background: var(--cream-soft); border: 1px solid var(--line); border-left: 4px solid var(--amber);
-  border-radius: var(--radius); padding: 1.3rem 1.4rem; margin: .4rem 0 1.4rem;
+.faq-item ul { list-style: none; padding: 0; }
+.faq-item ul li { position: relative; padding-left: 1.6rem; margin-bottom: .55rem; color: #34344a; }
+.faq-item ul li::before {
+  content: ""; position: absolute; left: 0; top: .55em; width: 8px; height: 8px;
+  border-radius: 2px; background: var(--amber); transform: rotate(45deg);
 }
-.callout h4 { margin: 0 0 .5rem; color: var(--navy); font-size: 1.05rem; font-weight: 700; }
-.callout p  { margin: 0; color: #34344a; }
 
 /* ---------- Testimonials ---------- */
 .tcards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; margin-top: 1.6rem; }
@@ -218,11 +263,22 @@ p  { margin: 0 0 1rem; }
   font-size: .88rem; font-weight: 700; color: var(--deep-amber);
   letter-spacing: .02em; margin-bottom: .9rem;
 }
-.tcard .quote { font-size: .98rem; color: #2c2c44; margin: 0; }
+.tcard .quote { font-size: 1rem; color: #2c2c44; margin: 0; font-style: italic; }
+
+/* Full story is collapsed so the page stays scannable. */
+.tmore { margin-top: .9rem; }
+.tmore summary {
+  cursor: pointer; font-weight: 700; font-size: .9rem; color: var(--coral);
+  list-style-position: inside;
+}
+.tmore summary:hover { text-decoration: underline; }
+.tmore p { margin: .9rem 0 0; font-size: .95rem; color: #34344a; }
+.tmore p:last-child { margin-bottom: 0; }
 
 /* ---------- Final CTA ---------- */
 .cta-band { background: linear-gradient(135deg, var(--dark-navy) 0%, var(--navy) 100%); color: #fff; }
 .cta-band h2 { color: #fff; }
+.cta-band .eyebrow { color: var(--amber); }
 .cta-band p { color: #cfcfe6; max-width: 52ch; margin-inline: auto; }
 .cta-band p a { color: var(--amber); }   /* coral fails contrast on the dark band */
 .cta-band .hero-cta { justify-content: center; margin-top: 1.6rem; }
@@ -244,26 +300,33 @@ p  { margin: 0 0 1rem; }
 .tagline-pill { color: var(--amber); font-weight: 600; }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 900px) {
-  .hero-grid, .plans { grid-template-columns: 1fr; }
-  .hero-art { order: -1; }
-  .portrait { max-width: 240px; }
+@media (max-width: 980px) {
+  .steps, .plans { grid-template-columns: 1fr; }
+  /* Portrait first, then the "25 years..." copy directly beneath it. */
+  .about-grid { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+  .about-copy p { max-width: 62ch; text-align: left; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
-  .tab-link { padding: .65rem 1rem; font-size: .95rem; }
   .nav-links {
-    position: fixed; inset: 64px 0 auto 0; flex-direction: column; align-items: stretch;
+    position: fixed; inset: 66px 0 auto 0; flex-direction: column; align-items: stretch;
     background: #fff; border-bottom: 1px solid var(--line); padding: 1rem 22px 1.4rem; gap: 1rem;
-    transform: translateY(-120%); transition: transform .25s ease; box-shadow: var(--shadow-md);
+    transform: translateY(-130%); transition: transform .25s ease; box-shadow: var(--shadow-md);
   }
   .nav-links.open { transform: translateY(0); }
-  .nav-links a:not(.btn) { padding: .3rem 0; }
+  .nav-links a { padding: .3rem 0; border-bottom: 0; }
+  .nav-links a.is-current { border-bottom: 0; }
   .nav-toggle { display: block; }
 }
 @media (max-width: 560px) {
   body { font-size: 16px; }
   .tcards, .footer-grid { grid-template-columns: 1fr; }
-  .tab-links { gap: .25rem; padding: 0 .3rem; }
-  .tab-link { flex: 1 1 auto; text-align: center; padding: .6rem .5rem; font-size: .88rem; }
+  .brand img { height: 34px; }
+  /* Keep the CTA on the bar at the narrowest widths by shortening the label. */
+  .nav-cta { padding: .55rem .9rem; font-size: .88rem; }
+  .nav-cta .cta-long { display: none; }
+  .nav-cta .cta-short { display: inline; }
+  .hero-cta .btn { width: 100%; justify-content: center; }
+  .proof { grid-template-columns: 1fr; gap: .9rem; }
+  .proof li + li { border-left: 0; border-top: 1px solid var(--line); padding-top: .9rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

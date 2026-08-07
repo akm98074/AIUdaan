@@ -148,4 +148,4 @@ serves this site instead.
 - [ ] Set real contact email / LinkedIn (search `hello@aiudaan.ai`).
 - [ ] Confirm HTTPS padlock and the non-www → root redirect both work.
 - [ ] Submit `https://aiudaan.ai/sitemap.xml` in Google Search Console.
-- [ ] Check the `og-image.png` preview by pasting the URL into LinkedIn/Slack.
+- [ ] Check the `og-image-your-flight-plan-v1.png` preview by pasting the URL into LinkedIn/Slack.

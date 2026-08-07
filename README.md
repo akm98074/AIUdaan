@@ -48,7 +48,8 @@ AIUdaan/
         ├── apple-touch-icon.png# 180×180 iOS home-screen icon
         ├── icon-192.png        # PWA icon
         ├── icon-512.png        # PWA icon
-        └── og-image.png        # 1200×630 social-share image
+        └── og-image-your-flight-plan-v1.png   # 1200×630 social-share image; also the
+                                #   source artwork the two lockups are cut from
 ```
 
 All asset references in the HTML are **root-absolute** (`/assets/...`), so the site

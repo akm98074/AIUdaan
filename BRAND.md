@@ -46,10 +46,11 @@ the horizontal arrangement gives it ~20px at the same bar height. Source artwork
 | Rights framing | AI Samajhna Sabka Haq Hai | Mission statements |
 | English global | Breaking the AI Wall | International, LinkedIn |
 | Scale framing | AI for the Next 500 Million | Press, pitch decks |
-| Current | Empowering the Future, Breaking Barriers | General purpose |
+| Current | Your Flight Plan | Logo lockup, general purpose |
+| Retired | Empowering the Future, Breaking Barriers | Superseded by *Your Flight Plan* |
 
 **Tagline choice for this site.** The brand-guide taglines above ("AI for the Next
-500 Million", "Sabka AI, Sabki Udaan", "Empowering the Future, Breaking Barriers")
+500 Million", "Sabka AI, Sabki Udaan")
 read as *mass-market / accessible-tech* — which clashes with what this site actually
 sells today: premium, hands-on career acceleration for senior engineers and
 leaders. For launch the site is scoped to that single offering,

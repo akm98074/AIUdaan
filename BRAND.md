@@ -5,11 +5,18 @@ implemented as CSS variables at the top of `assets/css/styles.css`.
 
 ## Logo
 
-- **Primary mark** (`assets/img/logo-primary.png`) — circuit-feather phoenix rising
-  over an amber sun, with the `AI UDAAN` wordmark. Use on white / light backgrounds.
-- **Dark version** (`assets/img/logo-dark.png`) — for dark backgrounds (used in footer).
+- **Primary lockup** (`assets/img/logo-primary.png`) — circuit-feather phoenix rising
+  over an amber sun, with the `AI UDAAN` wordmark and the `YOUR FLIGHT PLAN` tagline
+  set to its right. Use on white / light backgrounds.
+- **Dark version** (`assets/img/logo-dark.png`) — same lockup with a white wordmark,
+  for dark backgrounds (used in footer).
 - **Icon only** (`assets/img/icon.png`) — phoenix mark, transparent background, for
-  avatars / favicons / decorative use.
+  avatars / favicons / decorative use, and as the header logo below 380px.
+
+Both lockups are horizontal (mark left, text right) rather than stacked. A stacked
+lockup puts the wordmark at ~7px in a 42px-tall header bar, which is unreadable;
+the horizontal arrangement gives it ~20px at the same bar height. Source artwork:
+`assets/img/og-image-your-flight-plan-v1.png`.
 
 **Usage rules (from the guide):**
 - Maintain clear space equal to the `AI` text height on all sides.

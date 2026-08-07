@@ -73,7 +73,12 @@
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="#top" aria-label="AIUdaan home">
-        <img src="assets/img/logo-primary.png" alt="AI Udaan — Empowering the Future, Breaking Barriers" />
+        <!-- The horizontal lockup needs ~150px even at its smallest; below 370px
+             that crowds out the nav CTA, so the phoenix mark stands in. -->
+        <picture>
+          <source media="(max-width: 370px)" srcset="assets/img/icon.png" />
+          <img src="assets/img/logo-primary.png" alt="AI Udaan — Your Flight Plan" />
+        </picture>
       </a>
 
       <nav class="nav-links" id="navLinks" aria-label="Sections">
@@ -487,7 +492,7 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <img class="flogo" src="assets/img/logo-dark.png" alt="AI Udaan" />
+          <img class="flogo" src="assets/img/logo-dark.png" alt="AI Udaan — Your Flight Plan" />
           <p class="udaan-note">
             <span class="dev">Udaan (उड़ान)</span>: flight. Helping senior engineers
             and leaders make the climb — the Staff/Principal promo, the first VP seat,

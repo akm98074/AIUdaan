@@ -39,9 +39,9 @@ AIUdaan/
     ├── js/
     │   └── main.js             # Mobile-menu toggle + footer year (site works without JS)
     └── img/
-        ├── logo-primary.png    # Full wordmark for light backgrounds (header)
-        ├── logo-dark.png       # Full wordmark for dark backgrounds (footer)
-        ├── icon.png            # Phoenix mark, transparent bg (hero / about)
+        ├── logo-primary.png    # Horizontal lockup for light backgrounds (header)
+        ├── logo-dark.png       # Horizontal lockup for dark backgrounds (footer)
+        ├── icon.png            # Phoenix mark, transparent bg (header <380px, hero / about)
         ├── favicon.ico         # Multi-size .ico
         ├── favicon-32.png      # 32×32 PNG favicon
         ├── favicon-64.png      # 64×64 PNG favicon

@@ -115,8 +115,11 @@ p  { margin: 0 0 1rem; }
   border-bottom: 1px solid var(--line);
 }
 .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 12px; }
-.brand { display: inline-flex; align-items: center; gap: .6rem; }
-.brand img { height: 42px; width: auto; }
+.brand { display: inline-flex; align-items: center; gap: .6rem; min-width: 0; }
+/* The lockup is wide, so if the bar ever squeezes it, letterbox rather than
+   distort — `img { max-width: 100% }` alone would stretch it against the
+   fixed height. */
+.brand img { height: 42px; width: auto; object-fit: contain; }
 .nav-links { display: flex; align-items: center; gap: 1.5rem; }
 .nav-links a {
   color: var(--navy); font-weight: 600; font-size: .98rem;
@@ -285,7 +288,7 @@ p  { margin: 0 0 1rem; }
 .site-footer { background: var(--dark-navy); color: #c9c9da; padding: 56px 0 30px; }
 .site-footer a { color: var(--amber); }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2rem; }
-.site-footer img.flogo { height: 46px; margin-bottom: 1rem; }
+.site-footer img.flogo { height: 52px; margin-bottom: 1rem; }
 .udaan-note { font-size: .95rem; color: #b6b6cb; max-width: 40ch; }
 .udaan-note .dev { font-family: "Noto Sans Devanagari", var(--font); }
 .footer-col h4 { color: #fff; font-size: .85rem; letter-spacing: .1em; text-transform: uppercase; margin: 0 0 .9rem; }
@@ -325,6 +328,7 @@ p  { margin: 0 0 1rem; }
   .tcards, .footer-grid, .how-grid { grid-template-columns: 1fr; }
   .how-grid { gap: 1.5rem; margin-top: 2rem; }
   .brand img { height: 34px; }
+  /* Below 370px the markup swaps in the icon-only mark (see index.html). */
   /* Three stat cards side by side get too cramped below this width. */
   .stats { grid-template-columns: 1fr; }
   .stats li { display: flex; align-items: baseline; gap: .6rem; padding: .8rem .95rem; }
@@ -334,6 +338,11 @@ p  { margin: 0 0 1rem; }
   .nav-cta .cta-long { display: none; }
   .nav-cta .cta-short { display: inline; }
   .hero-cta .btn { width: 100%; justify-content: center; }
+}
+/* Narrowest band that still shows the wordmark: trim the lockup so it, the CTA
+   and the menu button all stay on one row. */
+@media (max-width: 420px) {
+  .brand img { height: 30px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

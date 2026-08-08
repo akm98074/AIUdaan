@@ -3,23 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
+  <!-- max-image-preview:large opts the OG image into large thumbnails in Search
+       and Discover; the snippet/video limits keep Google from truncating. -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
   <title>AIUdaan — AI-Native Career Acceleration</title>
   <meta name="description" content="AI-native career acceleration for senior engineers and leaders operating where there's no map. We take your goal and run it like a project — the Staff/Principal promo, the first director or VP seat, the manager-to-IC move." />
-  <meta name="keywords" content="career coaching for engineers, tech career mentorship, Staff engineer promotion, Principal engineer promotion, Director promotion, VP promotion, engineering leadership coaching, manager to IC transition, IC to manager transition, executive coaching for tech leaders, AI-native career, AI career acceleration, FAANG career coach, Microsoft Google Meta mentor, senior engineer career plateau, promotion coaching, stakeholder management, career strategy, Abhishek Mishra, AIUdaan" />
+  <!-- Google ignores meta keywords (has since 2009); kept as a harmless hint for
+       other engines and internal search. Real ranking signals live in the page
+       copy, the headings and the JSON-LD below. -->
+  <meta name="keywords" content="career coaching for engineers, tech career mentorship, Staff engineer promotion, Principal engineer promotion, Distinguished engineer, Director promotion, VP promotion, engineering leadership coaching, manager to IC transition, IC to manager transition, executive coaching for tech leaders, AI-native career, AI career acceleration, FAANG career coach, big tech career coach, senior engineer career plateau, promotion coaching, promo packet review, stakeholder mapping, influence and visibility at work, technical strategy document, calibration and promo committee, career strategy, 1:1 career mentorship, Abhishek Mishra, AIUdaan, AI Udaan" />
+  <meta name="subject" content="AI-native career coaching for senior software engineers and engineering leaders" />
+  <meta name="coverage" content="Worldwide" />
   <meta name="author" content="Abhishek Mishra" />
   <link rel="canonical" href="https://aiudaan.ai/" />
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AIUdaan" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://aiudaan.ai/" />
   <meta property="og:title" content="AIUdaan — AI-Native Career Acceleration" />
   <meta property="og:description" content="For senior engineers and leaders operating where there's no map. We take your goal and run it like a project — the Staff/Principal promo, the first director or VP seat, the manager-to-IC move." />
   <meta property="og:image" content="https://aiudaan.ai/assets/img/og-image-your-flight-plan-v1.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AI Udaan — Your Flight Plan" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="AIUdaan — AI-Native Career Acceleration" />
   <meta name="twitter:description" content="For senior engineers and leaders operating where there's no map. Hands-on career acceleration run like a project." />
   <meta name="twitter:image" content="https://aiudaan.ai/assets/img/og-image-your-flight-plan-v1.png" />
+  <meta name="twitter:image:alt" content="AI Udaan — Your Flight Plan" />
   <meta name="theme-color" content="#1A1A5E" />
 
   <!-- Icons / Manifest -->
@@ -35,30 +49,155 @@
 
   <link rel="stylesheet" href="assets/css/styles.css" />
 
-  <!-- Structured data -->
+  <!-- Structured data. One @graph so the site, the person behind it, the service
+       and the FAQ are cross-referenced by @id instead of parsed as four
+       unrelated islands — that is what lets Google resolve "AIUdaan" and
+       "Abhishek Mishra" to the same entity. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "AIUdaan",
-    "url": "https://aiudaan.ai/",
-    "logo": "https://aiudaan.ai/assets/img/logo-primary.png",
-    "image": "https://aiudaan.ai/assets/img/og-image-your-flight-plan-v1.png",
-    "slogan": "For senior engineers and leaders operating where there's no map.",
-    "description": "AI-native career acceleration for senior engineers and leaders — Staff/Principal promotions, the first director or VP seat, and manager-to-IC moves. We take your goal and run it like a project: stakeholder maps, influence plans, strategy docs, and blunt feedback, week by week.",
-    "founder": {
-      "@type": "Person",
-      "name": "Abhishek Mishra",
-      "sameAs": "https://www.linkedin.com/in/abhishekkmishra/"
-    },
-    "email": "akmishra@ainativex.ai",
-    "sameAs": ["https://www.linkedin.com/in/abhishekkmishra/"],
-    "knowsAbout": ["Career coaching", "Engineering leadership", "Staff engineer promotion", "Principal engineer promotion", "Director and VP transitions", "Manager to IC transition", "AI-native engineering", "Stakeholder management", "Career strategy"],
-    "areaServed": "Worldwide",
-    "offers": [
-      { "@type": "Offer", "name": "Diagnostic", "price": "3000", "priceCurrency": "USD" },
-      { "@type": "Offer", "name": "Half Arc", "price": "14000", "priceCurrency": "USD" },
-      { "@type": "Offer", "name": "Full Arc", "price": "24000", "priceCurrency": "USD" }
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://aiudaan.ai/#website",
+        "url": "https://aiudaan.ai/",
+        "name": "AIUdaan",
+        "alternateName": ["AI Udaan", "AIUdaan — Your Flight Plan"],
+        "description": "AI-native career acceleration for senior engineers and leaders.",
+        "inLanguage": "en",
+        "publisher": { "@id": "https://aiudaan.ai/#org" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://aiudaan.ai/#webpage",
+        "url": "https://aiudaan.ai/",
+        "name": "AIUdaan — AI-Native Career Acceleration",
+        "isPartOf": { "@id": "https://aiudaan.ai/#website" },
+        "about": { "@id": "https://aiudaan.ai/#org" },
+        "primaryImageOfPage": "https://aiudaan.ai/assets/img/og-image-your-flight-plan-v1.png",
+        "inLanguage": "en"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://aiudaan.ai/#abhishek",
+        "name": "Abhishek Mishra",
+        "url": "https://aiudaan.ai/",
+        "image": "https://aiudaan.ai/assets/img/abhishek-mishra.webp",
+        "jobTitle": "Career coach and mentor for senior engineers and engineering leaders",
+        "description": "Engineering leader turned career coach. Has mentored 100+ engineers, managers, directors and partners at the largest tech companies through Staff and Principal promotions, first director and VP seats, and manager-to-IC moves.",
+        "worksFor": { "@id": "https://aiudaan.ai/#org" },
+        "sameAs": ["https://www.linkedin.com/in/abhishekkmishra/"],
+        "knowsAbout": [
+          "Staff engineer promotion", "Principal engineer promotion", "Distinguished engineer",
+          "Engineering management", "Director and VP transitions", "Manager to IC transition",
+          "Promotion packet and case building", "Stakeholder mapping", "Influence and visibility",
+          "Technical strategy documents", "AI-native engineering", "Career strategy"
+        ]
+      },
+      {
+        "@type": ["ProfessionalService", "Organization"],
+        "@id": "https://aiudaan.ai/#org",
+        "name": "AIUdaan",
+        "alternateName": "AI Udaan",
+        "url": "https://aiudaan.ai/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://aiudaan.ai/assets/img/logo-primary.png",
+          "width": 866,
+          "height": 174
+        },
+        "image": "https://aiudaan.ai/assets/img/og-image-your-flight-plan-v1.png",
+        "slogan": "For senior engineers and leaders operating where there's no map.",
+        "description": "AI-native career acceleration for senior engineers and leaders — Staff/Principal promotions, the first director or VP seat, and manager-to-IC moves. We take your goal and run it like a project: stakeholder maps, influence plans, strategy docs, and blunt feedback, week by week.",
+        "founder": { "@id": "https://aiudaan.ai/#abhishek" },
+        "employee": { "@id": "https://aiudaan.ai/#abhishek" },
+        "email": "akmishra@ainativex.ai",
+        "sameAs": ["https://www.linkedin.com/in/abhishekkmishra/"],
+        "serviceType": [
+          "Career coaching for software engineers",
+          "Engineering leadership coaching",
+          "Promotion coaching",
+          "Executive coaching for technology leaders",
+          "Technical career mentorship"
+        ],
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Senior software engineers, staff and principal engineers, engineering managers, directors and VPs of engineering"
+        },
+        "knowsAbout": ["Career coaching", "Engineering leadership", "Staff engineer promotion", "Principal engineer promotion", "Director and VP transitions", "Manager to IC transition", "AI-native engineering", "Stakeholder management", "Career strategy"],
+        "areaServed": { "@type": "Place", "name": "Worldwide" },
+        "availableLanguage": "English",
+        "priceRange": "$3,000–$24,000",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Three ways in",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "name": "Diagnostic",
+              "price": "3000",
+              "priceCurrency": "USD",
+              "description": "A short, intense read of where you actually stand and what is blocking the next step.",
+              "itemOffered": { "@type": "Service", "name": "Career diagnostic for senior engineers and leaders" }
+            },
+            {
+              "@type": "Offer",
+              "name": "Half Arc",
+              "price": "14000",
+              "priceCurrency": "USD",
+              "description": "A multi-month engagement to build the case, the artifacts and the stakeholder plan behind your goal.",
+              "itemOffered": { "@type": "Service", "name": "Half-arc career acceleration engagement" }
+            },
+            {
+              "@type": "Offer",
+              "name": "Full Arc",
+              "price": "24000",
+              "priceCurrency": "USD",
+              "description": "The full engagement, run week by week across the promotion or transition cycle.",
+              "itemOffered": { "@type": "Service", "name": "Full-arc career acceleration engagement" }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://aiudaan.ai/#faq",
+        "isPartOf": { "@id": "https://aiudaan.ai/#webpage" },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Who is this for?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Staff, Principal, and Distinguished engineers. Managers, from first-line up through Director and VP. People converting between IC and management, in either direction. And anyone I've mentored before — you already know how I work."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Who is this not for?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Anyone who wants interview cramming, a resume rewrite, or answers from a distance. Anyone who wants reassurance more than the truth — I give blunt feedback, and this only pays off if you can take it and act on it. Anyone looking for a light-touch monthly check-in: this is hands-on and asks real work of you between sessions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you get me promoted in three or six months?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Senior promos run on a 12 to 18 month cycle you don't fully control: calibration windows, committee, your skip's capital, budget. What you do control is the case, the stakeholder map, the visible project, and the skill that closes the gap. In three to six months you won't be handed a title — you'll be on the path, visibly running the case, with skills and momentum that outlast our last session."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do we start?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Request a fit call. If it looks like a fit, we do one short call — fifteen or twenty minutes — to decide whether we should work together. If there's a real fit, we start with the Diagnostic."
+            }
+          }
+        ]
+      }
     ]
   }
   </script>
@@ -83,8 +222,11 @@
         <!-- The horizontal lockup needs ~150px even at its smallest; below 370px
              that crowds out the nav CTA, so the phoenix mark stands in. -->
         <picture>
-          <source media="(max-width: 370px)" srcset="assets/img/icon.png" />
-          <img src="assets/img/logo-primary.png" alt="AI Udaan — Your Flight Plan" />
+          <source media="(max-width: 370px)" srcset="assets/img/icon.png" width="244" height="166" />
+          <!-- Intrinsic dimensions give the browser the aspect ratio before the
+               file lands, so the header doesn't reflow on load (CLS). -->
+          <img src="assets/img/logo-primary.png" alt="AI Udaan — Your Flight Plan"
+               width="866" height="174" decoding="async" />
         </picture>
       </a>
 
@@ -250,7 +392,7 @@
             <h3 class="tcard-title">He changed my trajectory, not just my title</h3>
             <p class="tcard-name">
               Mahesh Kshirsagar
-              <a class="li-pill" href="https://www.linkedin.com/in/maheshkshirsagar/"
+              <a class="linkedin-pill" href="https://www.linkedin.com/in/maheshkshirsagar/"
                  target="_blank" rel="noopener"
                  aria-label="Mahesh Kshirsagar on LinkedIn">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#li-mark"></use></svg>
@@ -281,7 +423,7 @@
             <h3 class="tcard-title">From scattered energy to real direction</h3>
             <p class="tcard-name">
               Arpita Saha
-              <a class="li-pill" href="https://www.linkedin.com/in/arpitas/"
+              <a class="linkedin-pill" href="https://www.linkedin.com/in/arpitas/"
                  target="_blank" rel="noopener"
                  aria-label="Arpita Saha on LinkedIn">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#li-mark"></use></svg>
@@ -317,7 +459,7 @@
             <h3 class="tcard-title">The confidence to move from manager back to IC</h3>
             <p class="tcard-name">
               Pei Lu
-              <a class="li-pill" href="https://www.linkedin.com/in/peilu/"
+              <a class="linkedin-pill" href="https://www.linkedin.com/in/peilu/"
                  target="_blank" rel="noopener"
                  aria-label="Pei Lu on LinkedIn">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#li-mark"></use></svg>
@@ -349,7 +491,7 @@
             <h3 class="tcard-title">From doing the work to loving the field</h3>
             <p class="tcard-name">
               Karen Zhou
-              <a class="li-pill" href="https://www.linkedin.com/in/karenzhou0/"
+              <a class="linkedin-pill" href="https://www.linkedin.com/in/karenzhou0/"
                  target="_blank" rel="noopener"
                  aria-label="Karen Zhou on LinkedIn">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#li-mark"></use></svg>
@@ -380,7 +522,7 @@
             <h3 class="tcard-title">He mapped what I couldn't see</h3>
             <p class="tcard-name">
               Brijesh Warrier
-              <a class="li-pill" href="https://www.linkedin.com/in/brijeshwarrier/"
+              <a class="linkedin-pill" href="https://www.linkedin.com/in/brijeshwarrier/"
                  target="_blank" rel="noopener"
                  aria-label="Brijesh Warrier on LinkedIn">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="#li-mark"></use></svg>
@@ -544,7 +686,8 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <img class="flogo" src="assets/img/logo-dark.png" alt="AI Udaan — Your Flight Plan" />
+          <img class="flogo" src="assets/img/logo-dark.png" alt="AI Udaan — Your Flight Plan"
+               width="866" height="174" loading="lazy" decoding="async" />
           <p class="udaan-note">
             <span class="dev">Udaan (उड़ान)</span>: flight. Helping senior engineers
             and leaders make the climb — the Staff/Principal promo, the first VP seat,

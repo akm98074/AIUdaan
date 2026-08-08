@@ -44,11 +44,11 @@ ErrorDocument 404 /404.html
   ExpiresByType application/manifest+json "access plus 1 week"
 </IfModule>
 
-# --- Block search indexing (site not public yet) ---
-# Remove this block when you want the site indexable.
-<IfModule mod_headers.c>
-  Header always set X-Robots-Tag "noindex, nofollow"
-</IfModule>
+# --- Search indexing ---
+# The launch-time "X-Robots-Tag: noindex, nofollow" block was removed: an
+# X-Robots-Tag header overrides the page-level meta robots tag, so while it was
+# set Google would drop the site from the index no matter what the HTML said.
+# Indexing is now governed by robots.txt and the meta robots tag in index.html.
 
 # --- Security headers ---
 <IfModule mod_headers.c>

@@ -269,17 +269,9 @@ p  { margin: 0 0 1rem; }
   margin: 0 0 .95rem; font-size: .92rem; font-weight: 700;
   color: var(--deep-amber); letter-spacing: .02em;
 }
-.li-pill {
-  display: inline-flex; align-items: center; gap: .35rem;
-  padding: .24rem .68rem; border: 1px solid var(--line); border-radius: 999px;
-  background: #fff; color: var(--navy); font-size: .82rem; font-weight: 700;
-  line-height: 1.4; white-space: nowrap; box-shadow: var(--shadow-sm);
-  transition: border-color .15s ease, box-shadow .15s ease;
-}
-.li-pill svg { width: 15px; height: 15px; fill: #0A66C2; flex: none; }
-.li-pill:hover, .li-pill:focus-visible {
-  text-decoration: none; border-color: #0A66C2; box-shadow: var(--shadow-md);
-}
+/* Same pill as the hero, but the mark keeps LinkedIn blue against the white card. */
+.tcard .linkedin-pill { white-space: nowrap; box-shadow: var(--shadow-sm); }
+.tcard .linkedin-pill svg { width: 15px; height: 15px; fill: #0A66C2; }
 .svg-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
 .tcard .quote { font-size: 1rem; color: #2c2c44; margin: 0; font-style: italic; }
 

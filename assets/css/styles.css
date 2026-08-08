@@ -259,11 +259,28 @@ p  { margin: 0 0 1rem; }
   background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
   padding: 1.5rem 1.4rem; box-shadow: var(--shadow-sm); margin: 0;
 }
-.tcard .tcard-title { margin: 0 0 .35rem; font-size: 1.15rem; color: var(--navy); }
-.tcard .tcard-arc {
-  font-size: .88rem; font-weight: 700; color: var(--deep-amber);
-  letter-spacing: .02em; margin-bottom: .9rem;
+.tcard .tcard-title { margin: 0 0 .55rem; font-size: 1.15rem; color: var(--navy); font-weight: 700; }
+/* Name sits inline with the LinkedIn pill; the role follows on its own line. */
+.tcard .tcard-name {
+  display: flex; align-items: center; flex-wrap: wrap; gap: .6rem;
+  margin: 0 0 .2rem; font-size: 1rem; font-weight: 700; color: var(--deep-amber);
 }
+.tcard .tcard-role {
+  margin: 0 0 .95rem; font-size: .92rem; font-weight: 700;
+  color: var(--deep-amber); letter-spacing: .02em;
+}
+.li-pill {
+  display: inline-flex; align-items: center; gap: .35rem;
+  padding: .24rem .68rem; border: 1px solid var(--line); border-radius: 999px;
+  background: #fff; color: var(--navy); font-size: .82rem; font-weight: 700;
+  line-height: 1.4; white-space: nowrap; box-shadow: var(--shadow-sm);
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.li-pill svg { width: 15px; height: 15px; fill: #0A66C2; flex: none; }
+.li-pill:hover, .li-pill:focus-visible {
+  text-decoration: none; border-color: #0A66C2; box-shadow: var(--shadow-md);
+}
+.svg-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
 .tcard .quote { font-size: 1rem; color: #2c2c44; margin: 0; font-style: italic; }
 
 /* Full story is collapsed so the page stays scannable. */

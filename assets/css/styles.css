@@ -220,18 +220,50 @@ p  { margin: 0 0 1rem; }
 .how-step h3 { margin-bottom: .55rem; font-size: 1.02rem; }
 .how-step p { margin: 0; color: #34344a; font-size: .92rem; }
 
-/* ---------- Plans (Three ways in) ---------- */
-.plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin: 1.8rem 0 1.4rem; }
+/* ---------- Plans (Two ways in) ---------- */
+/* The Arc takes the wider column so it reads as the primary option; both cards
+   stretch to the same height and their footer lines sit on the bottom edge. */
+.plans { display: grid; grid-template-columns: 45fr 55fr; gap: 1.2rem; margin: 1.8rem 0 1.4rem; }
 .plan {
+  display: flex; flex-direction: column;
   background: #fff; border: 1px solid var(--line); border-top: 5px solid var(--amber);
   border-radius: var(--radius-lg); padding: 1.6rem 1.4rem; box-shadow: var(--shadow-sm);
   transition: transform .18s ease, box-shadow .18s ease;
 }
 .plan:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
-.plan--full { border-top-color: var(--coral); }
+.plan--arc { border: 1px solid var(--coral); border-top: 5px solid var(--coral); }
+.plan-tag {
+  display: block; margin-bottom: .55rem;
+  font-size: .72rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--num);
+}
+.plan--arc .plan-tag { color: var(--coral); }
 .plan h3 { margin-bottom: .2rem; }
 .plan .price { font-size: 1.35rem; font-weight: 800; color: var(--deep-amber); margin-bottom: .7rem; }
-.plan p:last-child { margin-bottom: 0; color: #34344a; font-size: .98rem; }
+.plan p { color: #34344a; font-size: .98rem; }
+/* Nested aside inside the Arc card: tinted panel with a left accent rule. */
+.plan-note {
+  margin: 0 0 1rem; padding: .9rem 1rem;
+  background: var(--cream-soft); border-left: 3px solid var(--amber);
+  border-radius: 0 var(--radius) var(--radius) 0; font-size: .92rem;
+}
+.plan-note strong { color: var(--navy); }
+/* margin-top:auto pins the footer line to the bottom of the equal-height card.
+   The gap above the hairline comes from the previous paragraph's own margin,
+   which flex keeps intact, so the line never crowds the body copy. */
+.plan-foot {
+  margin: 0; margin-top: auto; padding-top: .9rem; border-top: 1px solid var(--line);
+  font-size: .9rem; color: var(--muted);
+}
+.plan-foot strong { color: var(--navy); }
+
+/* ---------- Practical strip under the plans ---------- */
+.practical {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem;
+  margin: 2rem 0 1.6rem; padding-top: 1.6rem; border-top: 1px solid var(--line);
+}
+.practical-item h3 { margin-bottom: .35rem; font-size: .98rem; font-weight: 700; }
+.practical-item p { margin: 0; color: #34344a; font-size: .92rem; }
+
 .plans-note { font-weight: 700; color: var(--navy); }
 
 /* ---------- FAQ ---------- */
@@ -334,7 +366,8 @@ p  { margin: 0 0 1rem; }
 }
 @media (max-width: 560px) {
   body { font-size: 16px; }
-  .tcards, .footer-grid, .how-grid { grid-template-columns: 1fr; }
+  .tcards, .footer-grid, .how-grid, .practical { grid-template-columns: 1fr; }
+  .practical { gap: 1.4rem; }
   .how-grid { gap: 1.5rem; margin-top: 2rem; }
   .brand img { height: 34px; }
   /* Below 370px the markup swaps in the icon-only mark (see index.html). */
